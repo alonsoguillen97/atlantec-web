@@ -884,10 +884,16 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Formulario de contacto -->
         <div class="animate-slideInRight">
-          <form class="rounded-2xl bg-white p-8 shadow-xl">
+          <form id="contactForm" class="rounded-2xl bg-white p-8 shadow-xl">
             <h3 class="mb-6 text-2xl font-bold text-gray-800">
               Envíanos un mensaje
             </h3>
+            
+            <!-- Campos ocultos para Formspree -->
+            <input type="hidden" name="_subject" value="Nuevo mensaje de contacto - ATLANTEC">
+            <input type="hidden" name="_replyto" value="atlantecdigital@gmail.com">
+            <input type="hidden" name="_next" value="https://atlantec.es">
+            <input type="hidden" name="tipo_formulario" value="Contacto principal">
 
             <div class="space-y-6">
               <!-- Nombre -->
@@ -1336,7 +1342,7 @@ import Layout from '../layouts/Layout.astro';
 
     // Formulario de contacto
     document.addEventListener('DOMContentLoaded', function () {
-      const form = document.querySelector('#contacto form') as HTMLFormElement;
+      const form = document.querySelector('#contactForm') as HTMLFormElement;
       if (form) {
         form.addEventListener('submit', async function (e) {
           e.preventDefault();
