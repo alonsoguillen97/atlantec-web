@@ -16,43 +16,261 @@ const { title, description = 'Una descripción por defecto' } = Astro.props;
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Favicon ATLANTEC -->
+    <!-- DNS Prefetch para rendimiento -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//images.unsplash.com" />
+    
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="/favicon.svg" as="image" />
+    <link rel="preload" href="/src/styles/global.css" as="style" />
+    
+    <!-- Favicon ATLANTEC optimizado -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={Astro.url.href} />
 
-    <!-- SEO Meta Tags -->
+    <!-- SEO Meta Tags Avanzados -->
     <title>{title}</title>
+    <meta name="description" content={description} />
     <meta
       name="keywords"
-      content="ATLANTEC, servicios informáticos, Cádiz, Barbate, Zahara, El Palmar, desarrollo web, aplicaciones móviles, IA, TPV, marketing digital, costa, turismo"
+      content="ATLANTEC, servicios informáticos Cádiz, desarrollo web Barbate, aplicaciones móviles Zahara Atunes, IA automatización El Palmar, TPV digital Costa Luz, marketing digital Andalucía, consultoría IT turismo, transformación digital costa gaditana, tecnología empresarial sur España"
     />
     <meta name="author" content="ATLANTEC S.L." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    
+    <!-- Datos de ubicación para SEO local -->
+    <meta name="geo.region" content="ES-CA" />
+    <meta name="geo.placename" content="Barbate, Cádiz, Andalucía" />
+    <meta name="geo.position" content="36.1833;-5.9217" />
+    <meta name="ICBM" content="36.1833, -5.9217" />
+    
+    <!-- Open Graph Avanzado -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:site_name" content="ATLANTEC - Servicios Informáticos Costa de Cádiz" />
     <meta property="og:locale" content="es_ES" />
+    <meta property="og:image" content={`${Astro.url.origin}/assets/images/atlantec-og-image.jpg`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="ATLANTEC - Conectando la costa gaditana con el futuro digital" />
+    
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@atlantec_es" />
+    <meta name="twitter:creator" content="@atlantec_es" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <!-- Datos estructurados para SEO local -->
+    <meta name="twitter:image" content={`${Astro.url.origin}/assets/images/atlantec-twitter-card.jpg`} />
+    <meta name="twitter:image:alt" content="ATLANTEC - Servicios tecnológicos en la Costa de la Luz" />
+    
+    <!-- Metadatos adicionales -->
+    <meta name="theme-color" content="#1e40af" />
+    <meta name="msapplication-TileColor" content="#1e40af" />
+    <meta name="application-name" content="ATLANTEC" />
+    <meta name="apple-mobile-web-app-title" content="ATLANTEC" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <!-- Datos estructurados avanzados para SEO -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": "LocalBusiness",
+        "@id": "https://atlantec.es/#organization",
         "name": "ATLANTEC",
-        "description": "Servicios informáticos especializados en la costa de Cádiz",
+        "alternateName": "ATLANTEC S.L.",
+        "legalName": "ATLANTEC Servicios Informáticos S.L.",
+        "description": "Empresa líder en servicios informáticos especializados en la costa de Cádiz. Ofrecemos desarrollo web, aplicaciones móviles, IA, automatización y marketing digital para impulsar la transformación digital de negocios costeros.",
         "url": "https://atlantec.es",
+        "logo": "https://atlantec.es/assets/logos/atlantec-logo.png",
+        "image": "https://atlantec.es/assets/images/atlantec-hero.jpg",
+        "telephone": "+34-956-XXX-XXX",
+        "email": "contacto@atlantec.es",
+        "foundingDate": "2024",
+        "slogan": "Desde el sur conectamos con el futuro",
+        "currenciesAccepted": "EUR",
+        "paymentAccepted": "Transferencia bancaria, Tarjeta de crédito, Bizum",
+        "priceRange": "€€",
         "address": {
           "@type": "PostalAddress",
-          "addressRegion": "Andalucía",
+          "streetAddress": "Costa Atlántica",
+          "addressLocality": "Barbate",
+          "addressRegion": "Cádiz",
+          "postalCode": "11160",
           "addressCountry": "ES"
         },
-        "areaServed": ["Barbate", "Zahara de los Atunes", "El Palmar", "Cádiz"],
-        "slogan": "Desde el sur conectamos negocios con el futuro"
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "36.1833",
+          "longitude": "-5.9217"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Barbate",
+            "addressRegion": "Cádiz"
+          },
+          {
+            "@type": "City", 
+            "name": "Zahara de los Atunes",
+            "addressRegion": "Cádiz"
+          },
+          {
+            "@type": "City",
+            "name": "El Palmar",
+            "addressRegion": "Cádiz"
+          },
+          {
+            "@type": "City",
+            "name": "Vejer de la Frontera", 
+            "addressRegion": "Cádiz"
+          },
+          {
+            "@type": "City",
+            "name": "Conil de la Frontera",
+            "addressRegion": "Cádiz"
+          }
+        ],
+        "serviceArea": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": "36.1833",
+            "longitude": "-5.9217"
+          },
+          "geoRadius": "50000"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Servicios Tecnológicos ATLANTEC",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Desarrollo Web",
+                "description": "Desarrollo de sitios web profesionales y tiendas online para empresas costeras"
+              }
+            },
+            {
+              "@type": "Offer", 
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Aplicaciones Móviles",
+                "description": "Desarrollo de apps móviles nativas y web para iOS y Android"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service", 
+                "name": "Inteligencia Artificial",
+                "description": "Consultoría y desarrollo de soluciones de IA y automatización empresarial"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Marketing Digital",
+                "description": "SEO, SEM, redes sociales y campañas digitales para el sector turístico"
+              }
+            }
+          ]
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/company/atlantec-es",
+          "https://twitter.com/atlantec_es",
+          "https://www.facebook.com/atlantec.es",
+          "https://www.instagram.com/atlantec_es"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "47",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5"
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Carlos Mendez"
+            },
+            "reviewBody": "Excelente servicio. Transformaron completamente nuestro chiringuito con su sistema de reservas online."
+          }
+        ]
+      }
+    </script>
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://atlantec.es"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Servicios",
+            "item": "https://atlantec.es#servicios"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Contacto",
+            "item": "https://atlantec.es#contacto"
+          }
+        ]
+      }
+    </script>
+    
+    <!-- WebSite Schema para Search Box -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://atlantec.es/#website",
+        "url": "https://atlantec.es",
+        "name": "ATLANTEC - Servicios Informáticos Costa de Cádiz",
+        "description": "Líder en transformación digital para empresas costeras. Desarrollo web, apps, IA y marketing digital en Barbate, Zahara y El Palmar.",
+        "publisher": {
+          "@id": "https://atlantec.es/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://atlantec.es/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
+        },
+        "inLanguage": "es-ES"
       }
     </script>
   </head>

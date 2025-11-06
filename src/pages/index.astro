@@ -123,10 +123,10 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Servicios Section -->
-  <section id="servicios" class="bg-gray-50 py-20">
+  <section id="servicios" class="bg-gray-50 py-20" aria-labelledby="servicios-title">
     <div class="container mx-auto px-4">
-      <div class="animate-fadeInUp mb-16 text-center">
-        <h2 class="mb-4 text-4xl font-bold text-gray-800">
+      <header class="animate-fadeInUp mb-16 text-center">
+        <h2 id="servicios-title" class="mb-4 text-4xl font-bold text-gray-800">
           Soluciones Tecnológicas para la Costa
         </h2>
         <p class="mx-auto max-w-3xl text-xl text-gray-600">
@@ -134,21 +134,24 @@ import Layout from '../layouts/Layout.astro';
           especializados que conectan la tradición costera con las oportunidades
           del futuro digital.
         </p>
-      </div>
+      </header>
 
-      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4" role="list">
         <!-- Infraestructura IT -->
-        <div
+        <article
           class="transform rounded-lg border-t-4 border-blue-600 bg-white p-8 shadow-lg transition hover:scale-105 hover:shadow-xl"
+          role="listitem"
         >
           <div
             class="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100"
+            aria-hidden="true"
           >
             <svg
               class="h-8 w-8 text-blue-600"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              aria-hidden="true"
             >
               <path
                 stroke-linecap="round"
@@ -165,7 +168,7 @@ import Layout from '../layouts/Layout.astro';
             Mantenimiento integral, redes Wi-Fi, ciberseguridad y migración a la
             nube para chiringuitos, hoteles y comercios costeros.
           </p>
-        </div>
+        </article>
 
         <!-- Desarrollo Web y Apps -->
         <div
@@ -265,17 +268,17 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Testimonios Section -->
-  <section id="testimonios" class="bg-white py-20">
+  <section id="testimonios" class="bg-white py-20" aria-labelledby="testimonios-title">
     <div class="container mx-auto px-4">
-      <div class="animate-fadeInUp mb-16 text-center">
-        <h2 class="mb-4 text-4xl font-bold text-gray-800">
+      <header class="animate-fadeInUp mb-16 text-center">
+        <h2 id="testimonios-title" class="mb-4 text-4xl font-bold text-gray-800">
           Éxitos que nos avalan
         </h2>
         <p class="mx-auto max-w-3xl text-xl text-gray-600">
           Desde Barbate hasta El Palmar, conectamos negocios costeros con la
           tecnología del futuro
         </p>
-      </div>
+      </header>
 
       <div class="grid gap-8 md:grid-cols-3">
         <!-- Testimonio 1 -->
@@ -286,7 +289,11 @@ import Layout from '../layouts/Layout.astro';
             <img
               class="mr-4 h-12 w-12 rounded-full"
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
-              alt="Cliente"
+              alt="Carlos Mendez, propietario del Chiringuito Playa Dorada en Zahara de los Atunes"
+              loading="lazy"
+              decoding="async"
+              width="48"
+              height="48"
             />
             <div>
               <h4 class="font-semibold text-gray-800">Carlos Mendez</h4>

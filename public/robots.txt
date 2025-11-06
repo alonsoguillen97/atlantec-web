@@ -1,0 +1,35 @@
+# Robots.txt para ATLANTEC
+User-agent: *
+Allow: /
+
+# Permitir a todos los bots principales
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Denegar acceso a archivos sensibles
+Disallow: /admin/
+Disallow: /private/
+Disallow: *.log$
+Disallow: *.sql$
+Disallow: /temp/
+
+# Sitemap location
+Sitemap: https://atlantec.es/sitemap.xml
+
+# Crawl delay para ser amigables con los servidores
+Crawl-delay: 1
