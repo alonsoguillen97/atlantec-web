@@ -75,7 +75,7 @@ import Layout from '../layouts/Layout.astro';
         class="animate-fadeInUp mb-6 text-5xl leading-tight font-bold text-gray-900 md:text-6xl lg:text-7xl"
       >
         <span
-          class="animate-gradient bg-gradient-to-r from-blue-600 via-cyan-500 to-orange-500 bg-clip-text text-transparent"
+          class="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent"
         >
           Desde el sur
         </span>
@@ -90,7 +90,10 @@ import Layout from '../layouts/Layout.astro';
           class="animate-slideInRight inline-block"
           style="animation-delay: 0.6s;"
         >
-          con el futuro
+          con el <span class="animate-gradient bg-gradient-to-r from-orange-500 via-cyan-400 to-blue-600 bg-clip-text text-transparent relative">
+            futuro
+            <span class="absolute -inset-1 rounded-lg bg-gradient-to-r from-orange-500/20 via-cyan-400/20 to-blue-600/20 blur-sm -z-10"></span>
+          </span>
         </span>
       </h1>
       <p
