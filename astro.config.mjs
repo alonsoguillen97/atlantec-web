@@ -7,10 +7,9 @@ export default defineConfig({
   site: 'https://atlantec.es',
   output: 'static',
   build: {
-    format: 'file',
-    inlineStylesheets: 'auto',
-    assets: '_astro'
+    format: 'file'
   },
+  trailingSlash: 'ignore',
   compressHTML: true,
   vite: {
     plugins: [tailwindcss()],
@@ -21,16 +20,6 @@ export default defineConfig({
       fs: {
         strict: false,
       },
-    },
-    build: {
-      cssCodeSplit: true,
-      rollupOptions: {
-        output: {
-          assetFileNames: 'assets/[name].[hash][extname]',
-          chunkFileNames: 'assets/[name].[hash].js',
-          entryFileNames: 'assets/[name].[hash].js'
-        }
-      }
     }
   }
 });
