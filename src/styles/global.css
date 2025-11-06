@@ -129,6 +129,18 @@ h6 {
   }
 }
 
+@keyframes gradient {
+  0%,
+  100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
 /* Clases de utilidad para animaciones */
 .animate-fadeInUp {
   animation: fadeInUp 0.6s ease-out forwards;
@@ -154,6 +166,11 @@ h6 {
   animation: float 3s ease-in-out infinite;
 }
 
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
 /* Efectos de glassmorphism modernos - ELIMINADOS para evitar conflictos */
 /* Ya no se usan estas clases en el header */
 
@@ -168,8 +185,17 @@ html body header nav div div {
   color: #1e40af !important; /* Logo ATLANTEC */
 }
 
-html body header nav div span {
+html body header nav div span:not(.animate-gradient) {
   color: #1e3a8a !important; /* S.L. */
+}
+
+/* Permitir que el gradiente funcione en el header */
+html body header nav div span.animate-gradient {
+  background: linear-gradient(to right, #1d4ed8, #06b6d4, #ea580c) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  background-size: 200% 200% !important;
 }
 
 html body header nav div button {
