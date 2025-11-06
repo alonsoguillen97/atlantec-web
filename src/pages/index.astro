@@ -50,6 +50,7 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Mobile Menu Button -->
       <button
+        type="button"
         id="mobile-menu-button"
         class="md:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1.5 focus:outline-none"
         aria-label="Toggle mobile menu"
@@ -63,7 +64,8 @@ import Layout from '../layouts/Layout.astro';
     <!-- Mobile Menu -->
     <div
       id="mobile-menu"
-      class="md:hidden fixed inset-x-0 top-full bg-white border-t border-gray-200 shadow-lg transform -translate-y-full opacity-0 transition-all duration-300 ease-in-out"
+      class="md:hidden fixed inset-x-0 bg-white border-t border-gray-200 shadow-lg transform translate-y-full opacity-0 transition-all duration-300 ease-in-out pointer-events-none"
+      style="top: 100%;"
     >
       <div class="px-4 py-6 space-y-4">
         <a
@@ -1295,13 +1297,21 @@ import Layout from '../layouts/Layout.astro';
       const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
       let isMenuOpen = false;
 
-      function toggleMenu() {
+
+
+      function toggleMenu(event?: Event) {
+        if (event) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        
+
         isMenuOpen = !isMenuOpen;
         
         if (isMenuOpen) {
           // Open menu
-          mobileMenu?.classList.remove('-translate-y-full', 'opacity-0');
-          mobileMenu?.classList.add('translate-y-0', 'opacity-100');
+          mobileMenu?.classList.remove('translate-y-full', 'opacity-0', 'pointer-events-none');
+          mobileMenu?.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
           
           // Animate hamburger to X
           const spans = mobileMenuButton?.querySelectorAll('span');
@@ -1312,8 +1322,8 @@ import Layout from '../layouts/Layout.astro';
           }
         } else {
           // Close menu
-          mobileMenu?.classList.remove('translate-y-0', 'opacity-100');
-          mobileMenu?.classList.add('-translate-y-full', 'opacity-0');
+          mobileMenu?.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+          mobileMenu?.classList.add('translate-y-full', 'opacity-0', 'pointer-events-none');
           
           // Animate X back to hamburger
           const spans = mobileMenuButton?.querySelectorAll('span');
@@ -1326,13 +1336,25 @@ import Layout from '../layouts/Layout.astro';
       }
 
       // Toggle menu on button click
-      mobileMenuButton?.addEventListener('click', toggleMenu);
+      if (mobileMenuButton) {
+        mobileMenuButton.addEventListener('click', function(event) {
+
+          event.preventDefault();
+          event.stopPropagation();
+          event.stopImmediatePropagation();
+          toggleMenu(event);
+          return false;
+        }, true); // Use capture phase
+      } else {
+        console.error('Mobile menu button not found');
+      }
 
       // Close menu when clicking on a link
       mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (event) => {
+
           if (isMenuOpen) {
-            toggleMenu();
+            toggleMenu(event);
           }
         });
       });
@@ -1343,14 +1365,14 @@ import Layout from '../layouts/Layout.astro';
         if (isMenuOpen && 
             !mobileMenu?.contains(target) && 
             !mobileMenuButton?.contains(target)) {
-          toggleMenu();
+          toggleMenu(event);
         }
       });
 
       // Close menu on escape key
       document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape' && isMenuOpen) {
-          toggleMenu();
+          toggleMenu(event);
         }
       });
     });
