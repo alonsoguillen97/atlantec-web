@@ -147,20 +147,18 @@ import Layout from '../layouts/Layout.astro';
       >
         En <strong>Atlantec</strong>, trabajamos cada día para impulsar la transformación digital de los negocios, combinando innovación tecnológica con un trato cercano y personalizado.
       </p>
-      <div
-        class="animate-fadeInUp flex flex-col gap-4 sm:flex-row sm:justify-center"
-        style="animation-delay: 0.4s;"
-      >
-        <button
-          class="hover-lift animate-pulse-hover cursor-pointer rounded-lg bg-blue-600 px-8 py-4 font-semibold text-white shadow-lg hover:bg-blue-800"
+      
+      <!-- Botón Solicitar Presupuesto -->
+      <div class="animate-fadeInUp text-center" style="animation-delay: 0.4s;">
+        <a
+          href="#contacto"
+          class="inline-flex items-center px-6 py-3 bg-gray-100 text-gray-700 font-medium text-base rounded-md border border-gray-300 hover:bg-gray-50 hover:text-blue-600 hover:border-blue-300 transition-all duration-200 ease-in-out"
         >
-          Comenzar Proyecto
-        </button>
-        <button
-          class="hover-lift animate-pulse-hover cursor-pointer rounded-lg border-2 border-blue-600 px-8 py-4 font-semibold text-blue-600 hover:bg-blue-600 hover:text-white"
-        >
-          Ver Casos de Éxito
-        </button>
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+          Solicitar Presupuesto
+        </a>
       </div>
     </div>
   </section>
@@ -1304,15 +1302,15 @@ import Layout from '../layouts/Layout.astro';
           event.preventDefault();
           event.stopPropagation();
         }
-        
+
 
         isMenuOpen = !isMenuOpen;
-        
+
         if (isMenuOpen) {
           // Open menu
           mobileMenu?.classList.remove('translate-y-full', 'opacity-0', 'pointer-events-none');
           mobileMenu?.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
-          
+
           // Animate hamburger to X
           const spans = mobileMenuButton?.querySelectorAll('span');
           if (spans) {
@@ -1324,7 +1322,7 @@ import Layout from '../layouts/Layout.astro';
           // Close menu
           mobileMenu?.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
           mobileMenu?.classList.add('translate-y-full', 'opacity-0', 'pointer-events-none');
-          
+
           // Animate X back to hamburger
           const spans = mobileMenuButton?.querySelectorAll('span');
           if (spans) {
@@ -1362,8 +1360,8 @@ import Layout from '../layouts/Layout.astro';
       // Close menu when clicking outside
       document.addEventListener('click', function(event) {
         const target = event.target as HTMLElement;
-        if (isMenuOpen && 
-            !mobileMenu?.contains(target) && 
+        if (isMenuOpen &&
+            !mobileMenu?.contains(target) &&
             !mobileMenuButton?.contains(target)) {
           toggleMenu(event);
         }
