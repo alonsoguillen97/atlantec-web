@@ -89,12 +89,14 @@ const categories = [...new Set(articles.map(article => article.category))];
     <nav class="container mx-auto flex items-center justify-between px-4 py-4">
       <!-- Logo -->
       <div class="flex items-center space-x-3">
-        <img
-          src="/assets/logos/atlantec-logo.png"
-          alt="ATLANTEC Logo"
-          class="h-12 w-12 object-contain"
-        />
-        <span class="bg-gradient-to-r from-blue-600 via-cyan-500 to-orange-500 bg-clip-text text-xl font-bold text-transparent">Atlantec</span>
+        <a href="/" class="flex items-center space-x-3 cursor-pointer">
+          <img
+            src="/assets/logos/atlantec-logo.png"
+            alt="ATLANTEC Logo"
+            class="h-12 w-12 object-contain"
+          />
+          <span class="bg-gradient-to-r from-blue-600 via-cyan-500 to-orange-500 bg-clip-text text-xl font-bold text-transparent">Atlantec</span>
+        </a>
       </div>
 
       <!-- Navigation Links -->
@@ -316,9 +318,13 @@ const categories = [...new Set(articles.map(article => article.category))];
 
       mobileMenuLinks.forEach(link => {
         link.addEventListener('click', (event) => {
-          if (isMenuOpen) {
+          const href = (link as HTMLAnchorElement).getAttribute('href');
+          
+          // Only close menu for anchor links (#), not external links
+          if (isMenuOpen && href && href.startsWith('#')) {
             toggleMenu(event);
           }
+          // For external links like /, /blog, let the navigation proceed normally
         });
       });
 
