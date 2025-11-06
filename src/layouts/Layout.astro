@@ -81,7 +81,7 @@ const { title, description = 'Una descripción por defecto' } = Astro.props;
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <!-- Datos estructurados avanzados para SEO -->
-    <script type="application/ld+json">
+    <script type="application/ld+json" is:inline>
       {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -226,7 +226,7 @@ const { title, description = 'Una descripción por defecto' } = Astro.props;
     </script>
     
     <!-- Breadcrumb Schema -->
-    <script type="application/ld+json">
+    <script type="application/ld+json" is:inline>
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -254,7 +254,7 @@ const { title, description = 'Una descripción por defecto' } = Astro.props;
     </script>
     
     <!-- WebSite Schema para Search Box -->
-    <script type="application/ld+json">
+    <script type="application/ld+json" is:inline>
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
@@ -346,7 +346,6 @@ const { title, description = 'Una descripción por defecto' } = Astro.props;
         function updateHeader() {
           const scrolled = window.pageYOffset;
           const header = document.querySelector('header') as HTMLElement;
-          const html = document.documentElement;
 
           if (header) {
             if (scrolled > 50) {

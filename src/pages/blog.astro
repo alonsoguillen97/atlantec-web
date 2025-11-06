@@ -344,7 +344,7 @@ const categories = [...new Set(articles.map(article => article.category))];
       const articles = document.querySelectorAll('.article-card');
 
       filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function(this: HTMLElement) {
           const category = this.getAttribute('data-category');
           
           // Update active button
@@ -358,10 +358,11 @@ const categories = [...new Set(articles.map(article => article.category))];
           
           // Filter articles
           articles.forEach(article => {
+            const articleEl = article as HTMLElement;
             if (category === 'all' || article.getAttribute('data-category') === category) {
-              article.style.display = 'block';
+              articleEl.style.display = 'block';
             } else {
-              article.style.display = 'none';
+              articleEl.style.display = 'none';
             }
           });
         });
@@ -372,13 +373,15 @@ const categories = [...new Set(articles.map(article => article.category))];
     document.addEventListener('DOMContentLoaded', function() {
       const newsletterForm = document.querySelector('form');
       if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
+        newsletterForm.addEventListener('submit', function(this: HTMLFormElement, e: Event) {
           e.preventDefault();
-          const email = this.querySelector('input[type="email"]').value;
+          const emailInput = this.querySelector('input[type="email"]') as HTMLInputElement;
           
-          // Simular envío
-          alert('¡Gracias por suscribirte! Te mantendremos informado de las últimas novedades.');
-          this.reset();
+          if (emailInput) {
+            // Simular envío
+            alert('¡Gracias por suscribirte! Te mantendremos informado de las últimas novedades.');
+            this.reset();
+          }
         });
       }
     });

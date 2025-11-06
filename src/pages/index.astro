@@ -1392,7 +1392,7 @@ import Layout from '../layouts/Layout.astro';
     const btnSolicitarLlamada = document.getElementById('btn-solicitar-llamada');
     const modalLlamada = document.getElementById('modal-solicitar-llamada');
     const cerrarModalLlamada = document.getElementById('cerrar-modal-llamada');
-    const formLlamada = document.getElementById('form-solicitar-llamada');
+    const formLlamada = document.getElementById('form-solicitar-llamada') as HTMLFormElement;
 
     if (btnSolicitarLlamada && modalLlamada && cerrarModalLlamada && formLlamada) {
       // Abrir modal
