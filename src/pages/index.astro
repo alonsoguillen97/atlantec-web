@@ -1261,13 +1261,16 @@ import Layout from '../layouts/Layout.astro';
         console.error('Mobile menu button not found');
       }
 
-      // Close menu when clicking on a link
+      // Close menu when clicking on anchor links (not external links)
       mobileMenuLinks.forEach(link => {
         link.addEventListener('click', (event) => {
-
-          if (isMenuOpen) {
+          const href = (link as HTMLAnchorElement).getAttribute('href');
+          
+          // Only close menu for anchor links (#), not external links
+          if (isMenuOpen && href && href.startsWith('#')) {
             toggleMenu(event);
           }
+          // For external links like /blog, let the navigation proceed normally
         });
       });
 
