@@ -1,0 +1,488 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const article = {
+  title: "E-commerce: Claves para Vender Online con Éxito",
+  author: "Ana Martínez",
+  date: "2025-01-03",
+  readTime: "6 min",
+  category: "E-commerce",
+  tags: ["E-commerce", "Ventas Online", "Marketing Digital"],
+  excerpt: "Todo lo que necesitas saber para crear y gestionar una tienda online exitosa: desde la plataforma hasta las estrategias de conversión."
+};
+---
+
+<Layout
+  title={`${article.title} - Blog ATLANTEC`}
+  description={article.excerpt}
+>
+  <!-- Header Navigation -->
+  <header class="fixed top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-200">
+    <nav class="container mx-auto flex items-center justify-between px-4 py-4">
+      <div class="flex items-center space-x-3">
+        <img
+          src="/assets/logos/atlantec-logo.png"
+          alt="ATLANTEC Logo"
+          class="h-12 w-12 object-contain"
+        />
+        <span class="bg-gradient-to-r from-blue-600 via-cyan-500 to-orange-500 bg-clip-text text-xl font-bold text-transparent">Atlantec</span>
+      </div>
+
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="/" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Inicio</a>
+        <a href="/#soluciones" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Soluciones</a>
+        <a href="/#servicios" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Servicios</a>
+        <a href="/blog" class="text-blue-600 font-medium">Blog</a>
+        <a href="/#contacto" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Article Hero -->
+  <section class="pt-24 pb-12 bg-gradient-to-br from-orange-50 via-white to-red-50">
+    <div class="container mx-auto px-4">
+      <nav class="mb-8">
+        <ol class="flex items-center space-x-2 text-sm text-gray-500">
+          <li><a href="/" class="hover:text-blue-600">Inicio</a></li>
+          <li><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+          <li><a href="/blog" class="hover:text-blue-600">Blog</a></li>
+          <li><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+          <li class="text-gray-800">E-commerce Exitoso</li>
+        </ol>
+      </nav>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="mb-4">
+          <span class="px-3 py-1 bg-orange-100 text-orange-600 text-sm font-medium rounded-full">
+            {article.category}
+          </span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+          {article.title}
+        </h1>
+
+        <div class="flex flex-wrap items-center gap-6 text-gray-600 mb-8">
+          <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+            </svg>
+            <span>{article.author}</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+            </svg>
+            <span>{new Date(article.date).toLocaleDateString('es-ES', { 
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+            })}</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+            </svg>
+            <span>{article.readTime} de lectura</span>
+          </div>
+        </div>
+
+        <div class="aspect-video bg-gradient-to-br from-orange-100 to-red-100 rounded-xl mb-8 flex items-center justify-center">
+          <svg class="w-24 h-24 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <article class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="prose prose-lg prose-blue max-w-none">
+          
+          <h2>El Boom del E-commerce en España</h2>
+          
+          <p>El comercio electrónico en España ha experimentado un crecimiento espectacular, especialmente tras la pandemia. Con más de 25 millones de compradores online y un volumen de ventas que supera los 50.000 millones de euros anuales, el e-commerce se ha convertido en una oportunidad de negocio imprescindible.</p>
+
+          <p>En <strong>ATLANTEC</strong>, hemos ayudado a cientos de empresas a dar el salto al mundo digital, desde pequeños artesanos hasta grandes distribuidores. Nuestra experiencia nos ha enseñado qué funciona y qué no en el e-commerce español.</p>
+
+          <blockquote>
+            <p>"El e-commerce no es solo crear una tienda online: es construir una experiencia digital que genere confianza y facilite la compra."</p>
+          </blockquote>
+
+          <h2>1. Elegir la Plataforma Adecuada</h2>
+
+          <h3>Factores Clave a Considerar</h3>
+          <ul>
+            <li><strong>Tipo de productos:</strong> Físicos, digitales, servicios o mixto</li>
+            <li><strong>Volumen de productos:</strong> Catálogo pequeño vs. gran inventario</li>
+            <li><strong>Presupuesto inicial:</strong> Solución económica vs. personalizada</li>
+            <li><strong>Conocimientos técnicos:</strong> Fácil gestión vs. control avanzado</li>
+            <li><strong>Escalabilidad:</strong> Crecimiento futuro previsto</li>
+          </ul>
+
+          <h3>Plataformas Recomendadas por ATLANTEC</h3>
+
+          <h4>Para Principiantes:</h4>
+          <ul>
+            <li><strong>Shopify:</strong> Ideal para empezar rápido, muchas plantillas</li>
+            <li><strong>Wix E-commerce:</strong> Muy visual, perfecto para productos creativos</li>
+            <li><strong>Squarespace Commerce:</strong> Diseño elegante, ideal para marcas premium</li>
+          </ul>
+
+          <h4>Para Negocios Avanzados:</h4>
+          <ul>
+            <li><strong>WooCommerce:</strong> Máxima personalización, integración con WordPress</li>
+            <li><strong>Magento Commerce:</strong> Potente para catálogos grandes y B2B</li>
+            <li><strong>PrestaShop:</strong> Solución europea con muchas funcionalidades</li>
+          </ul>
+
+          <h2>2. Diseño que Convierte</h2>
+
+          <h3>Principios de UX para E-commerce</h3>
+
+          <h4>Navegación Intuitiva</h4>
+          <ul>
+            <li><strong>Menú claro:</strong> Categorías bien organizadas y fáciles de encontrar</li>
+            <li><strong>Buscador eficiente:</strong> Con filtros y sugerencias automáticas</li>
+            <li><strong>Breadcrumbs:</strong> Para que el usuario sepa siempre dónde está</li>
+            <li><strong>Carrito visible:</strong> Acceso constante al carrito de compra</li>
+          </ul>
+
+          <h4>Fichas de Producto Optimizadas</h4>
+          <ul>
+            <li><strong>Imágenes de calidad:</strong> Múltiples ángulos, zoom y galería</li>
+            <li><strong>Descripción detallada:</strong> Características, beneficios y especificaciones</li>
+            <li><strong>Información de envío:</strong> Costes y tiempos de entrega claros</li>
+            <li><strong>Reseñas de clientes:</strong> Opiniones verificadas y valoraciones</li>
+            <li><strong>Productos relacionados:</strong> Sugerencias para aumentar el ticket medio</li>
+          </ul>
+
+          <h3>Optimización para Móviles</h3>
+          <p>Con más del 60% de las compras online realizándose desde dispositivos móviles, el diseño responsive no es opcional:</p>
+
+          <ul>
+            <li><strong>Pantallas táctiles:</strong> Botones grandes y fáciles de pulsar</li>
+            <li><strong>Carga rápida:</strong> Optimización de imágenes y código</li>
+            <li><strong>Formularios simples:</strong> Mínimos campos obligatorios</li>
+            <li><strong>Pago móvil:</strong> Integración con Apple Pay, Google Pay, etc.</li>
+          </ul>
+
+          <h2>3. Proceso de Compra Optimizado</h2>
+
+          <h3>Checkout de Alta Conversión</h3>
+
+          <h4>Pasos Mínimos</h4>
+          <p>Reduce el abandono del carrito simplificando el proceso:</p>
+          <ul>
+            <li><strong>Checkout de una página:</strong> Toda la información en pantalla</li>
+            <li><strong>Compra sin registro:</strong> Opción de comprar como invitado</li>
+            <li><strong>Autocompletado:</strong> Formularios que se rellenan automáticamente</li>
+            <li><strong>Resumen visible:</strong> Productos, precios y total siempre visibles</li>
+          </ul>
+
+          <h4>Opciones de Pago</h4>
+          <ul>
+            <li><strong>Tarjeta de crédito/débito:</strong> Visa, Mastercard, American Express</li>
+            <li><strong>Wallets digitales:</strong> PayPal, Apple Pay, Google Pay</li>
+            <li><strong>Transferencia bancaria:</strong> Bizum, Sofort, Klarna</li>
+            <li><strong>Financiación:</strong> Pago a plazos para compras grandes</li>
+            <li><strong>Contrareembolso:</strong> Aunque genera más abandonos</li>
+          </ul>
+
+          <h2>4. Estrategias de Marketing Digital</h2>
+
+          <h3>SEO para E-commerce</h3>
+
+          <h4>Optimización On-Page</h4>
+          <ul>
+            <li><strong>Keywords en títulos:</strong> Productos con términos de búsqueda relevantes</li>
+            <li><strong>URLs amigables:</strong> Descriptivas y con palabras clave</li>
+            <li><strong>Meta descripciones:</strong> Atractivas y con call-to-action</li>
+            <li><strong>Rich Snippets:</strong> Datos estructurados para mostrar precios y reseñas</li>
+          </ul>
+
+          <h4>Contenido de Valor</h4>
+          <ul>
+            <li><strong>Blog corporativo:</strong> Artículos sobre tus productos y sector</li>
+            <li><strong>Guías de compra:</strong> Ayuda a elegir el producto adecuado</li>
+            <li><strong>Videos demostrativos:</strong> Cómo usar tus productos</li>
+            <li><strong>FAQ completa:</strong> Respuestas a dudas frecuentes</li>
+          </ul>
+
+          <h3>Email Marketing</h3>
+
+          <h4>Automatizaciones Esenciales</h4>
+          <ul>
+            <li><strong>Welcome series:</strong> Secuencia de bienvenida para nuevos suscriptores</li>
+            <li><strong>Carrito abandonado:</strong> Recordatorios automáticos para finalizar compra</li>
+            <li><strong>Post-compra:</strong> Confirmación, seguimiento y solicitud de reseña</li>
+            <li><strong>Reactivación:</strong> Ofertas para clientes inactivos</li>
+            <li><strong>Productos relacionados:</strong> Sugerencias basadas en compras anteriores</li>
+          </ul>
+
+          <h3>Publicidad en Redes Sociales</h3>
+
+          <h4>Facebook e Instagram Ads</h4>
+          <ul>
+            <li><strong>Catálogo dinámico:</strong> Anuncios automáticos de productos</li>
+            <li><strong>Retargeting:</strong> Impactos a visitantes que no compraron</li>
+            <li><strong>Lookalike audiences:</strong> Personas similares a tus mejores clientes</li>
+            <li><strong>Shopping ads:</strong> Compras directamente desde la red social</li>
+          </ul>
+
+          <h4>Google Ads para E-commerce</h4>
+          <ul>
+            <li><strong>Google Shopping:</strong> Mostrar productos con imagen y precio</li>
+            <li><strong>Search campaigns:</strong> Anuncios de texto para búsquedas específicas</li>
+            <li><strong>Display remarketing:</strong> Banners para visitantes anteriores</li>
+            <li><strong>YouTube ads:</strong> Videos promocionales de productos</li>
+          </ul>
+
+          <h2>5. Logística y Atención al Cliente</h2>
+
+          <h3>Gestión del Almacén</h3>
+
+          <h4>Control de Inventario</h4>
+          <ul>
+            <li><strong>Stock en tiempo real:</strong> Evita vender productos agotados</li>
+            <li><strong>Alertas automáticas:</strong> Notificaciones cuando el stock es bajo</li>
+            <li><strong>Rotación de productos:</strong> Análisis de productos más/menos vendidos</li>
+            <li><strong>Estacionalidad:</strong> Previsión de demanda por temporadas</li>
+          </ul>
+
+          <h3>Opciones de Envío</h3>
+
+          <h4>Estrategias de Entrega</h4>
+          <ul>
+            <li><strong>Envío gratuito:</strong> A partir de cierto importe mínimo</li>
+            <li><strong>Múltiples opciones:</strong> Estándar, express, mismo día</li>
+            <li><strong>Puntos de recogida:</strong> Tiendas físicas, lockers automáticos</li>
+            <li><strong>Tracking completo:</strong> Seguimiento en tiempo real del pedido</li>
+          </ul>
+
+          <h3>Servicio de Atención al Cliente</h3>
+
+          <h4>Canales de Contacto</h4>
+          <ul>
+            <li><strong>Chat en vivo:</strong> Respuesta inmediata durante horario comercial</li>
+            <li><strong>WhatsApp Business:</strong> Canal preferido por usuarios españoles</li>
+            <li><strong>Email:</strong> Para consultas menos urgentes</li>
+            <li><strong>Teléfono:</strong> Número gratuito para incidencias importantes</li>
+          </ul>
+
+          <h2>6. Casos de Éxito ATLANTEC</h2>
+
+          <h3>"Moda Mediterránea" - Ropa y Complementos</h3>
+          <p><strong>Situación inicial:</strong> Tienda física con ventas estancadas.</p>
+          <p><strong>Solución implementada:</strong></p>
+          <ul>
+            <li>E-commerce en Shopify con diseño personalizado</li>
+            <li>Integración con redes sociales</li>
+            <li>Campañas de Google Shopping</li>
+            <li>Email marketing automatizado</li>
+          </ul>
+          <p><strong>Resultados en 12 meses:</strong></p>
+          <ul>
+            <li>300% aumento en ventas totales</li>
+            <li>40% de ingresos provenientes del online</li>
+            <li>ROI de 450% en publicidad digital</li>
+            <li>5000+ suscriptores en newsletter</li>
+          </ul>
+
+          <h3>"Gourmet Andaluz" - Productos Alimentarios</h3>
+          <p><strong>Situación inicial:</strong> Productor local con distribución limitada.</p>
+          <p><strong>Solución implementada:</strong></p>
+          <ul>
+            <li>Tienda online en WooCommerce</li>
+            <li>Blog con recetas y contenido gastronómico</li>
+            <li>Programa de afiliados</li>
+            <li>Marketplace (Amazon, El Corte Inglés)</li>
+          </ul>
+          <p><strong>Resultados en 8 meses:</strong></p>
+          <ul>
+            <li>Expansión nacional de ventas</li>
+            <li>200% crecimiento en facturación</li>
+            <li>50 puntos de venta físicos nuevos</li>
+            <li>Reconocimiento de marca a nivel nacional</li>
+          </ul>
+
+          <h2>7. Métricas y Optimización Continua</h2>
+
+          <h3>KPIs Esenciales para E-commerce</h3>
+
+          <h4>Métricas de Conversión</h4>
+          <ul>
+            <li><strong>Tasa de conversión:</strong> % visitantes que compran</li>
+            <li><strong>Valor medio del pedido:</strong> Importe promedio por compra</li>
+            <li><strong>Tasa de abandono del carrito:</strong> % carritos no completados</li>
+            <li><strong>Lifetime Value (LTV):</strong> Valor total por cliente</li>
+          </ul>
+
+          <h4>Métricas de Tráfico</h4>
+          <ul>
+            <li><strong>Visitantes únicos:</strong> Personas diferentes que visitan la web</li>
+            <li><strong>Páginas vistas por sesión:</strong> Engagement del usuario</li>
+            <li><strong>Tiempo en página:</strong> Interés en los productos</li>
+            <li><strong>Tasa de rebote:</strong> % usuarios que salen inmediatamente</li>
+          </ul>
+
+          <h3>Herramientas de Análisis</h3>
+          <ul>
+            <li><strong>Google Analytics 4:</strong> Análisis completo del comportamiento</li>
+            <li><strong>Google Search Console:</strong> Rendimiento en buscadores</li>
+            <li><strong>Hotjar:</strong> Mapas de calor y grabaciones de sesiones</li>
+            <li><strong>Facebook Pixel:</strong> Seguimiento de conversiones en redes</li>
+          </ul>
+
+          <h2>Conclusión</h2>
+
+          <p>El e-commerce exitoso requiere una estrategia integral que abarque desde la elección de la plataforma hasta la optimización continua basada en datos. No es suficiente con tener una tienda bonita; necesitas un ecosistema digital que funcione perfectamente en cada punto de contacto con el cliente.</p>
+
+          <p>En <strong>ATLANTEC</strong>, nuestro enfoque holístico del e-commerce ha permitido a nuestros clientes no solo vender online, sino construir marcas digitales sólidas que compiten en el mercado global.</p>
+
+          <p>El momento de dar el salto al e-commerce es ahora. Cada día que esperas, tus competidores están ganando terreno en el mundo digital.</p>
+
+        </div>
+
+        <!-- Tags -->
+        <div class="mt-12 pt-8 border-t border-gray-200">
+          <h3 class="text-lg font-semibold text-gray-800 mb-4">Etiquetas</h3>
+          <div class="flex flex-wrap gap-3">
+            {article.tags.map(tag => (
+              <span class="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full hover:bg-orange-100 hover:text-orange-600 transition-colors duration-200 cursor-pointer">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-gradient-to-r from-orange-50 to-red-50 rounded-xl p-8 text-center">
+          <h3 class="text-2xl font-bold text-gray-800 mb-4">
+            ¿Listo para Lanzar tu E-commerce?
+          </h3>
+          <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+            En ATLANTEC creamos tiendas online que venden. Desde la estrategia hasta la implementación, te acompañamos en todo el proceso.
+          </p>
+          <a 
+            href="/#contacto" 
+            class="inline-flex items-center px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white font-medium rounded-lg transition-colors duration-200"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M8 11v6a2 2 0 002 2h4a2 2 0 002-2v-6M8 11h8"></path>
+            </svg>
+            Consulta Gratuita E-commerce
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Related Articles -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Artículos Relacionados</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div class="aspect-video bg-gradient-to-br from-purple-100 to-violet-100 flex items-center justify-center">
+              <svg class="w-12 h-12 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+              </svg>
+            </div>
+            <div class="p-6">
+              <span class="text-xs text-purple-600 font-medium">Sistemas</span>
+              <h3 class="text-lg font-bold text-gray-800 mt-2 mb-3">Por Qué tu Empresa Necesita un Sistema TPV Moderno</h3>
+              <p class="text-gray-600 text-sm mb-4">Los beneficios de actualizar tu sistema de punto de venta...</p>
+              <a href="/blog/sistema-tpv-moderno" class="text-blue-600 hover:text-blue-700 font-medium text-sm">Leer más →</a>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div class="aspect-video bg-gradient-to-br from-green-100 to-emerald-100 flex items-center justify-center">
+              <svg class="w-12 h-12 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div class="p-6">
+              <span class="text-xs text-green-600 font-medium">Marketing Digital</span>
+              <h3 class="text-lg font-bold text-gray-800 mt-2 mb-3">SEO Local: Cómo Posicionar tu Negocio</h3>
+              <p class="text-gray-600 text-sm mb-4">Estrategias de SEO local para mejorar la visibilidad online...</p>
+              <a href="/blog/seo-local-negocio" class="text-blue-600 hover:text-blue-700 font-medium text-sm">Leer más →</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="text-center mt-12">
+          <a 
+            href="/blog" 
+            class="inline-flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg transition-colors duration-200"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Volver al Blog
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .prose {
+      color: #374151;
+    }
+    .prose h2 {
+      color: #1f2937;
+      font-size: 1.875rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .prose h3 {
+      color: #1f2937;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .prose h4 {
+      color: #1f2937;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .prose p {
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+    .prose ul, .prose ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    .prose li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+    .prose blockquote {
+      border-left: 4px solid #ea580c;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: #4b5563;
+      background: #fff7ed;
+      padding: 1rem;
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+    .prose strong {
+      color: #1f2937;
+      font-weight: 600;
+    }
+  </style>
+</Layout>

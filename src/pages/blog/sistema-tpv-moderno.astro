@@ -1,0 +1,397 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const article = {
+  title: "Por Qué tu Empresa Necesita un Sistema TPV Moderno",
+  author: "Carlos Ruiz",
+  date: "2025-01-05",
+  readTime: "4 min",
+  category: "Sistemas",
+  tags: ["TPV", "Punto de Venta", "Gestión"],
+  excerpt: "Los beneficios de actualizar tu sistema de punto de venta: mayor eficiencia, mejor experiencia del cliente y análisis de datos avanzados."
+};
+---
+
+<Layout
+  title={`${article.title} - Blog ATLANTEC`}
+  description={article.excerpt}
+>
+  <!-- Header Navigation -->
+  <header class="fixed top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-200">
+    <nav class="container mx-auto flex items-center justify-between px-4 py-4">
+      <div class="flex items-center space-x-3">
+        <img
+          src="/assets/logos/atlantec-logo.png"
+          alt="ATLANTEC Logo"
+          class="h-12 w-12 object-contain"
+        />
+        <span class="bg-gradient-to-r from-blue-600 via-cyan-500 to-orange-500 bg-clip-text text-xl font-bold text-transparent">Atlantec</span>
+      </div>
+
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="/" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Inicio</a>
+        <a href="/#soluciones" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Soluciones</a>
+        <a href="/#servicios" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Servicios</a>
+        <a href="/blog" class="text-blue-600 font-medium">Blog</a>
+        <a href="/#contacto" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Article Hero -->
+  <section class="pt-24 pb-12 bg-gradient-to-br from-purple-50 via-white to-violet-50">
+    <div class="container mx-auto px-4">
+      <nav class="mb-8">
+        <ol class="flex items-center space-x-2 text-sm text-gray-500">
+          <li><a href="/" class="hover:text-blue-600">Inicio</a></li>
+          <li><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+          <li><a href="/blog" class="hover:text-blue-600">Blog</a></li>
+          <li><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+          <li class="text-gray-800">Sistema TPV Moderno</li>
+        </ol>
+      </nav>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="mb-4">
+          <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm font-medium rounded-full">
+            {article.category}
+          </span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+          {article.title}
+        </h1>
+
+        <div class="flex flex-wrap items-center gap-6 text-gray-600 mb-8">
+          <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+            </svg>
+            <span>{article.author}</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+            </svg>
+            <span>{new Date(article.date).toLocaleDateString('es-ES', { 
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+            })}</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+            </svg>
+            <span>{article.readTime} de lectura</span>
+          </div>
+        </div>
+
+        <div class="aspect-video bg-gradient-to-br from-purple-100 to-violet-100 rounded-xl mb-8 flex items-center justify-center">
+          <svg class="w-24 h-24 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <article class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="prose prose-lg prose-blue max-w-none">
+          
+          <h2>La Evolución del Punto de Venta</h2>
+          
+          <p>Los sistemas de punto de venta (TPV) han evolucionado dramáticamente en los últimos años. Lo que antes era simplemente una caja registradora glorificada, ahora se ha convertido en el centro neurálgico de la operación comercial moderna.</p>
+
+          <p>En <strong>ATLANTEC</strong>, hemos implementado sistemas TPV modernos en cientos de negocios, desde pequeños comercios hasta grandes cadenas, y hemos visto de primera mano cómo un sistema adecuado puede transformar completamente la eficiencia operacional.</p>
+
+          <h2>Señales de que Necesitas Actualizar tu TPV</h2>
+
+          <p>¿Tu sistema actual presenta alguno de estos problemas?</p>
+
+          <ul>
+            <li><strong>Lentitud en las transacciones:</strong> Los clientes esperan demasiado para ser atendidos</li>
+            <li><strong>Errores frecuentes:</strong> Problemas con el cálculo de cambios o aplicación de descuentos</li>
+            <li><strong>Falta de integración:</strong> El TPV no se comunica con tu inventario o contabilidad</li>
+            <li><strong>Informes limitados:</strong> No tienes datos claros sobre ventas y tendencias</li>
+            <li><strong>Métodos de pago limitados:</strong> No aceptas pagos con tarjeta o móvil</li>
+            <li><strong>Gestión manual del inventario:</strong> Actualizas el stock manualmente</li>
+          </ul>
+
+          <blockquote>
+            <p>"Un sistema TPV moderno no solo procesa ventas, sino que proporciona inteligencia empresarial que impulsa el crecimiento del negocio."</p>
+          </blockquote>
+
+          <h2>Beneficios de un Sistema TPV Moderno</h2>
+
+          <h3>1. Velocidad y Eficiencia Operacional</h3>
+          <ul>
+            <li><strong>Transacciones más rápidas:</strong> Procesamiento instantáneo de pagos</li>
+            <li><strong>Códigos de barras integrados:</strong> Escaneo rápido de productos</li>
+            <li><strong>Cálculos automáticos:</strong> Impuestos, descuentos y cambios precisos</li>
+            <li><strong>Múltiples métodos de pago:</strong> Efectivo, tarjeta, móvil, contactless</li>
+          </ul>
+
+          <h3>2. Gestión Inteligente del Inventario</h3>
+          <ul>
+            <li><strong>Actualización automática:</strong> Stock actualizado en tiempo real</li>
+            <li><strong>Alertas de stock bajo:</strong> Notificaciones cuando necesitas repostar</li>
+            <li><strong>Análisis de rotación:</strong> Identifica productos de alta y baja rotación</li>
+            <li><strong>Pedidos automáticos:</strong> Reposición automatizada de productos</li>
+          </ul>
+
+          <h3>3. Análisis y Reportes Avanzados</h3>
+          <ul>
+            <li><strong>Ventas en tiempo real:</strong> Monitoriza el rendimiento instantáneamente</li>
+            <li><strong>Análisis de tendencias:</strong> Identifica patrones de compra</li>
+            <li><strong>Reportes personalizados:</strong> Información específica para tu negocio</li>
+            <li><strong>Análisis de empleados:</strong> Rendimiento individual del personal</li>
+          </ul>
+
+          <h2>Características Esenciales de un TPV Moderno</h2>
+
+          <h3>Interfaz Intuitiva</h3>
+          <p>Un sistema TPV moderno debe ser fácil de usar para todo el personal, independientemente de su experiencia tecnológica:</p>
+          <ul>
+            <li>Pantalla táctil responsive</li>
+            <li>Navegación intuitiva</li>
+            <li>Botones grandes y claros</li>
+            <li>Configuración personalizable</li>
+          </ul>
+
+          <h3>Conectividad e Integración</h3>
+          <ul>
+            <li><strong>Cloud-based:</strong> Acceso desde cualquier lugar</li>
+            <li><strong>API abierta:</strong> Integración con otros sistemas</li>
+            <li><strong>Sincronización multi-tienda:</strong> Gestión centralizada</li>
+            <li><strong>Backup automático:</strong> Datos seguros y respaldados</li>
+          </ul>
+
+          <h3>Funcionalidades Avanzadas</h3>
+          <ul>
+            <li><strong>Programa de fidelización:</strong> Gestión automática de puntos y recompensas</li>
+            <li><strong>Promociones inteligentes:</strong> Descuentos automáticos basados en reglas</li>
+            <li><strong>Gestión de empleados:</strong> Control de horarios y comisiones</li>
+            <li><strong>E-commerce integrado:</strong> Sincronización con tienda online</li>
+          </ul>
+
+          <h2>Casos de Éxito Reales</h2>
+
+          <h3>Restaurante "La Marina" - Cádiz</h3>
+          <p><strong>Situación:</strong> Sistema manual, errores frecuentes en pedidos, cola de espera larga.</p>
+          <p><strong>Solución ATLANTEC:</strong> TPV integrado con cocina y sistema de reservas.</p>
+          <p><strong>Resultados:</strong></p>
+          <ul>
+            <li>40% reducción en tiempo de servicio</li>
+            <li>25% aumento en ventas promedio</li>
+            <li>Eliminación de errores en pedidos</li>
+            <li>Control total del inventario</li>
+          </ul>
+
+          <h3>Tienda de Moda "Estilo Costero" - Chiclana</h3>
+          <p><strong>Situación:</strong> Problemas de inventario, desconocimiento de productos más vendidos.</p>
+          <p><strong>Solución ATLANTEC:</strong> TPV con análisis avanzado y gestión de tallas/colores.</p>
+          <p><strong>Resultados:</strong></p>
+          <ul>
+            <li>60% mejora en rotación de inventario</li>
+            <li>30% aumento en ventas cruzadas</li>
+            <li>Eliminación de roturas de stock</li>
+            <li>Optimización del espacio de almacén</li>
+          </ul>
+
+          <h2>Proceso de Implementación ATLANTEC</h2>
+
+          <h3>Fase 1: Análisis y Consultoría (Semana 1)</h3>
+          <ul>
+            <li>Evaluación del sistema actual</li>
+            <li>Análisis de necesidades específicas</li>
+            <li>Diseño de la solución personalizada</li>
+            <li>Presupuesto detallado</li>
+          </ul>
+
+          <h3>Fase 2: Configuración y Preparación (Semana 2)</h3>
+          <ul>
+            <li>Configuración del sistema</li>
+            <li>Migración de datos existentes</li>
+            <li>Integración con sistemas actuales</li>
+            <li>Pruebas de funcionamiento</li>
+          </ul>
+
+          <h3>Fase 3: Instalación y Formación (Semana 3)</h3>
+          <ul>
+            <li>Instalación del hardware</li>
+            <li>Configuración final in-situ</li>
+            <li>Formación completa del personal</li>
+            <li>Período de acompañamiento</li>
+          </ul>
+
+          <h3>Fase 4: Soporte y Optimización (Continuo)</h3>
+          <ul>
+            <li>Soporte técnico 24/7</li>
+            <li>Actualizaciones automáticas</li>
+            <li>Optimizaciones basadas en uso</li>
+            <li>Formación adicional si es necesaria</li>
+          </ul>
+
+          <h2>ROI: ¿Cuándo se Amortiza la Inversión?</h2>
+
+          <p>Basándose en nuestra experiencia, un sistema TPV moderno se amortiza típicamente en:</p>
+
+          <ul>
+            <li><strong>Comercio pequeño (1-2 empleados):</strong> 6-8 meses</li>
+            <li><strong>Comercio mediano (3-10 empleados):</strong> 3-6 meses</li>
+            <li><strong>Comercio grande (+10 empleados):</strong> 2-4 meses</li>
+          </ul>
+
+          <p>Los ahorros provienen de:</p>
+          <ul>
+            <li>Reducción de errores humanos</li>
+            <li>Mejora en la eficiencia del personal</li>
+            <li>Optimización del inventario</li>
+            <li>Aumento en ventas por mejor servicio</li>
+            <li>Reducción de mermas y pérdidas</li>
+          </ul>
+
+          <h2>Conclusión</h2>
+
+          <p>Un sistema TPV moderno no es un gasto, es una inversión estratégica que transforma la operación de tu negocio. En un mercado cada vez más competitivo, la eficiencia operacional y la experiencia del cliente son factores diferenciadores clave.</p>
+
+          <p>En <strong>ATLANTEC</strong>, no solo instalamos sistemas TPV: implementamos soluciones integrales que impulsan el crecimiento de tu negocio. Nuestro enfoque personalizado asegura que obtengas exactamente lo que necesitas para maximizar tu ROI.</p>
+
+        </div>
+
+        <!-- Tags -->
+        <div class="mt-12 pt-8 border-t border-gray-200">
+          <h3 class="text-lg font-semibold text-gray-800 mb-4">Etiquetas</h3>
+          <div class="flex flex-wrap gap-3">
+            {article.tags.map(tag => (
+              <span class="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full hover:bg-purple-100 hover:text-purple-600 transition-colors duration-200 cursor-pointer">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-gradient-to-r from-purple-50 to-violet-50 rounded-xl p-8 text-center">
+          <h3 class="text-2xl font-bold text-gray-800 mb-4">
+            ¿Listo para Modernizar tu Punto de Venta?
+          </h3>
+          <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+            En ATLANTEC te ayudamos a elegir e implementar el sistema TPV perfecto para tu negocio. Análisis gratuito incluido.
+          </p>
+          <a 
+            href="/#contacto" 
+            class="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors duration-200"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
+            Solicitar Demo Gratuita
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Related Articles -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Artículos Relacionados</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div class="aspect-video bg-gradient-to-br from-orange-100 to-red-100 flex items-center justify-center">
+              <svg class="w-12 h-12 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V8zm0 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2z"></path>
+              </svg>
+            </div>
+            <div class="p-6">
+              <span class="text-xs text-orange-600 font-medium">E-commerce</span>
+              <h3 class="text-lg font-bold text-gray-800 mt-2 mb-3">E-commerce: Claves para Vender Online con Éxito</h3>
+              <p class="text-gray-600 text-sm mb-4">Estrategias probadas para crear una tienda online exitosa...</p>
+              <a href="/blog/ecommerce-vender-online" class="text-blue-600 hover:text-blue-700 font-medium text-sm">Leer más →</a>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div class="aspect-video bg-gradient-to-br from-slate-100 to-gray-200 flex items-center justify-center">
+              <svg class="w-12 h-12 text-slate-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+              </svg>
+            </div>
+            <div class="p-6">
+              <span class="text-xs text-slate-600 font-medium">Automatización</span>
+              <h3 class="text-lg font-bold text-gray-800 mt-2 mb-3">Automatización de Procesos: Optimiza tu Negocio</h3>
+              <p class="text-gray-600 text-sm mb-4">Cómo implementar la automatización en tu empresa para reducir costes...</p>
+              <a href="/blog/automatizacion-procesos-negocio" class="text-blue-600 hover:text-blue-700 font-medium text-sm">Leer más →</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="text-center mt-12">
+          <a 
+            href="/blog" 
+            class="inline-flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg transition-colors duration-200"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Volver al Blog
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .prose {
+      color: #374151;
+    }
+    .prose h2 {
+      color: #1f2937;
+      font-size: 1.875rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .prose h3 {
+      color: #1f2937;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .prose p {
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+    .prose ul, .prose ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    .prose li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+    .prose blockquote {
+      border-left: 4px solid #8b5cf6;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: #4b5563;
+      background: #faf5ff;
+      padding: 1rem;
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+    .prose strong {
+      color: #1f2937;
+      font-weight: 600;
+    }
+  </style>
+</Layout>

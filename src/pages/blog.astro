@@ -1,0 +1,402 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Datos de ejemplo de artículos del blog
+const articles = [
+  {
+    id: 1,
+    title: "Las Tendencias Tecnológicas que Marcarán 2025",
+    slug: "tendencias-tecnologicas-2025",
+    excerpt: "Descubre las principales innovaciones tecnológicas que transformarán los negocios este año: IA generativa, automatización inteligente y más.",
+    author: "Equipo ATLANTEC",
+    date: "2025-01-15",
+    readTime: "5 min",
+    image: "/assets/images/blog/tendencias-2025.jpg",
+    category: "Tecnología",
+    tags: ["IA", "Automatización", "Transformación Digital"]
+  },
+  {
+    id: 2,
+    title: "Cómo Mejorar el SEO Local para tu Negocio",
+    slug: "seo-local-negocio",
+    excerpt: "Guía completa para optimizar tu presencia online local y atraer más clientes de tu zona geográfica con estrategias SEO efectivas.",
+    author: "Ana García",
+    date: "2025-01-10",
+    readTime: "7 min",
+    image: "/assets/images/blog/seo-local.jpg",
+    category: "Marketing Digital",
+    tags: ["SEO", "Marketing Local", "Google Business"]
+  },
+  {
+    id: 3,
+    title: "Por Qué tu Empresa Necesita un Sistema TPV Moderno",
+    slug: "sistema-tpv-moderno",
+    excerpt: "Los beneficios de actualizar tu sistema de punto de venta: mayor eficiencia, mejor experiencia del cliente y análisis de datos avanzados.",
+    author: "Carlos Ruiz",
+    date: "2025-01-05",
+    readTime: "4 min",
+    image: "/assets/images/blog/tpv-moderno.jpg",
+    category: "Sistemas",
+    tags: ["TPV", "Punto de Venta", "Gestión"]
+  },
+  {
+    id: 4,
+    title: "E-commerce: Claves para Vender Online con Éxito",
+    slug: "ecommerce-vender-online",
+    excerpt: "Estrategias probadas para crear una tienda online exitosa: desde el diseño UX hasta las técnicas de conversión más efectivas.",
+    author: "María López",
+    date: "2024-12-28",
+    readTime: "6 min",
+    image: "/assets/images/blog/ecommerce-exito.jpg",
+    category: "E-commerce",
+    tags: ["Tienda Online", "Conversión", "UX"]
+  },
+  {
+    id: 5,
+    title: "Ciberseguridad para Pequeñas y Medianas Empresas",
+    slug: "ciberseguridad-pymes",
+    excerpt: "Protege tu negocio con las mejores prácticas de seguridad informática adaptadas a PYMEs: prevención, detección y respuesta ante amenazas.",
+    author: "David Martín",
+    date: "2024-12-20",
+    readTime: "8 min",
+    image: "/assets/images/blog/ciberseguridad-pymes.jpg",
+    category: "Seguridad",
+    tags: ["Ciberseguridad", "PYME", "Protección"]
+  },
+  {
+    id: 6,
+    title: "Automatización de Procesos: Optimiza tu Negocio",
+    slug: "automatizacion-procesos-negocio",
+    excerpt: "Cómo implementar la automatización en tu empresa para reducir costes, eliminar errores y mejorar la productividad de tus equipos.",
+    author: "Laura Fernández",
+    date: "2024-12-15",
+    readTime: "5 min",
+    image: "/assets/images/blog/automatizacion-procesos.jpg",
+    category: "Automatización",
+    tags: ["Automatización", "Procesos", "Productividad"]
+  }
+];
+
+const categories = [...new Set(articles.map(article => article.category))];
+---
+
+<Layout
+  title="Blog - ATLANTEC | Noticias y Tendencias Tecnológicas"
+  description="Mantente al día con las últimas tendencias tecnológicas, consejos de marketing digital y estrategias para hacer crecer tu negocio con ATLANTEC."
+>
+  <!-- Header Navigation -->
+  <header class="fixed top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-200">
+    <nav class="container mx-auto flex items-center justify-between px-4 py-4">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <img
+          src="/assets/logos/atlantec-logo.png"
+          alt="ATLANTEC Logo"
+          class="h-12 w-12 object-contain"
+        />
+        <span class="bg-gradient-to-r from-blue-600 via-cyan-500 to-orange-500 bg-clip-text text-xl font-bold text-transparent">Atlantec</span>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="/" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Inicio</a>
+        <a href="/#soluciones" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Soluciones</a>
+        <a href="/#servicios" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Servicios</a>
+        <a href="/blog" class="text-blue-600 font-medium">Blog</a>
+        <a href="/#contacto" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Contacto</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        type="button"
+        id="mobile-menu-button"
+        class="md:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1.5 focus:outline-none"
+        aria-label="Toggle mobile menu"
+      >
+        <span class="block w-6 h-0.5 bg-gray-600 transition-transform duration-300"></span>
+        <span class="block w-6 h-0.5 bg-gray-600 transition-opacity duration-300"></span>
+        <span class="block w-6 h-0.5 bg-gray-600 transition-transform duration-300"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="md:hidden fixed inset-x-0 bg-white border-t border-gray-200 shadow-lg transform translate-y-full opacity-0 transition-all duration-300 ease-in-out pointer-events-none"
+      style="top: 100%;"
+    >
+      <div class="px-4 py-6 space-y-4">
+        <a href="/" class="mobile-menu-link block py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200">Inicio</a>
+        <a href="/#soluciones" class="mobile-menu-link block py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200">Soluciones</a>
+        <a href="/#servicios" class="mobile-menu-link block py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200">Servicios</a>
+        <a href="/blog" class="mobile-menu-link block py-3 px-4 text-blue-600 bg-blue-50 rounded-lg">Blog</a>
+        <a href="/#contacto" class="mobile-menu-link block py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200">Contacto</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-24 pb-16 bg-gradient-to-br from-blue-50 via-white to-cyan-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          Blog <span class="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">ATLANTEC</span>
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Mantente al día con las últimas tendencias tecnológicas, consejos de marketing digital y estrategias para hacer crecer tu negocio.
+        </p>
+      </div>
+
+      <!-- Categories Filter -->
+      <div class="flex flex-wrap justify-center gap-3 mb-12">
+        <button class="category-filter active px-4 py-2 rounded-full bg-blue-600 text-white text-sm font-medium transition-all duration-200" data-category="all">
+          Todas las categorías
+        </button>
+        {categories.map(category => (
+          <button class="category-filter px-4 py-2 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 text-sm font-medium transition-all duration-200" data-category={category}>
+            {category}
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles Grid -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div id="articles-grid" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {articles.map(article => (
+          <article class="article-card bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden" data-category={article.category}>
+            <!-- Article Image -->
+            <div class="aspect-video bg-gradient-to-br from-blue-100 to-cyan-100 relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <svg class="w-16 h-16 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <!-- Category Badge -->
+              <div class="absolute top-4 left-4">
+                <span class="px-3 py-1 bg-white/90 backdrop-blur-sm text-xs font-medium text-blue-600 rounded-full">
+                  {article.category}
+                </span>
+              </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="p-6">
+              <!-- Meta Info -->
+              <div class="flex items-center text-sm text-gray-500 mb-3">
+                <span>{article.author}</span>
+                <span class="mx-2">•</span>
+                <span>{new Date(article.date).toLocaleDateString('es-ES', { 
+                  year: 'numeric', 
+                  month: 'long', 
+                  day: 'numeric' 
+                })}</span>
+                <span class="mx-2">•</span>
+                <span>{article.readTime} lectura</span>
+              </div>
+
+              <!-- Title -->
+              <h2 class="text-xl font-bold text-gray-800 mb-3 line-clamp-2">
+                {article.title}
+              </h2>
+
+              <!-- Excerpt -->
+              <p class="text-gray-600 mb-4 line-clamp-3">
+                {article.excerpt}
+              </p>
+
+              <!-- Tags -->
+              <div class="flex flex-wrap gap-2 mb-4">
+                {article.tags.slice(0, 3).map(tag => (
+                  <span class="px-2 py-1 bg-gray-100 text-xs text-gray-600 rounded">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <!-- Read More -->
+              <a 
+                href={`/blog/${article.slug}`}
+                class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
+              >
+                Leer más
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <!-- Load More Button -->
+      <div class="text-center mt-12">
+        <button class="px-8 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg transition-colors duration-200">
+          Cargar más artículos
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 text-center">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">
+          No te pierdas nuestras últimas noticias
+        </h2>
+        <p class="text-gray-600 mb-8">
+          Suscríbete a nuestro newsletter y recibe las últimas tendencias tecnológicas y consejos para hacer crecer tu negocio.
+        </p>
+        <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <input 
+            type="email" 
+            placeholder="Tu email aquí..."
+            class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            required
+          />
+          <button 
+            type="submit"
+            class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200"
+          >
+            Suscribirme
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Mobile Menu Toggle (reutilizado del landing page)
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+      let isMenuOpen = false;
+
+      function toggleMenu(event?: Event) {
+        if (event) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        
+        isMenuOpen = !isMenuOpen;
+        
+        if (isMenuOpen) {
+          mobileMenu?.classList.remove('translate-y-full', 'opacity-0', 'pointer-events-none');
+          mobileMenu?.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+          
+          const spans = mobileMenuButton?.querySelectorAll('span');
+          if (spans) {
+            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+          }
+        } else {
+          mobileMenu?.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+          mobileMenu?.classList.add('translate-y-full', 'opacity-0', 'pointer-events-none');
+          
+          const spans = mobileMenuButton?.querySelectorAll('span');
+          if (spans) {
+            spans[0].style.transform = 'rotate(0) translate(0, 0)';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'rotate(0) translate(0, 0)';
+          }
+        }
+      }
+
+      if (mobileMenuButton) {
+        mobileMenuButton.addEventListener('click', function(event) {
+          toggleMenu(event);
+          return false;
+        }, true);
+      }
+
+      mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+          if (isMenuOpen) {
+            toggleMenu(event);
+          }
+        });
+      });
+
+      document.addEventListener('click', function(event) {
+        const target = event.target as HTMLElement;
+        if (isMenuOpen && 
+            !mobileMenu?.contains(target) && 
+            !mobileMenuButton?.contains(target)) {
+          toggleMenu(event);
+        }
+      });
+
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && isMenuOpen) {
+          toggleMenu(event);
+        }
+      });
+    });
+
+    // Categories Filter
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.category-filter');
+      const articles = document.querySelectorAll('.article-card');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const category = this.getAttribute('data-category');
+          
+          // Update active button
+          filterButtons.forEach(btn => {
+            btn.classList.remove('active', 'bg-blue-600', 'text-white');
+            btn.classList.add('bg-gray-100', 'text-gray-600');
+          });
+          
+          this.classList.add('active', 'bg-blue-600', 'text-white');
+          this.classList.remove('bg-gray-100', 'text-gray-600');
+          
+          // Filter articles
+          articles.forEach(article => {
+            if (category === 'all' || article.getAttribute('data-category') === category) {
+              article.style.display = 'block';
+            } else {
+              article.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+
+    // Newsletter form
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.querySelector('form');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const email = this.querySelector('input[type="email"]').value;
+          
+          // Simular envío
+          alert('¡Gracias por suscribirte! Te mantendremos informado de las últimas novedades.');
+          this.reset();
+        });
+      }
+    });
+  </script>
+
+  <style>
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    .line-clamp-3 {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
+</Layout>

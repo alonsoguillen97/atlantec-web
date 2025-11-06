@@ -1,0 +1,417 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const article = {
+  title: "Cómo Mejorar el SEO Local para tu Negocio",
+  author: "Ana García",
+  date: "2025-01-10",
+  readTime: "7 min",
+  category: "Marketing Digital",
+  tags: ["SEO", "Marketing Local", "Google Business"],
+  excerpt: "Guía completa para optimizar tu presencia online local y atraer más clientes de tu zona geográfica con estrategias SEO efectivas."
+};
+---
+
+<Layout
+  title={`${article.title} - Blog ATLANTEC`}
+  description={article.excerpt}
+>
+  <!-- Header Navigation -->
+  <header class="fixed top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-200">
+    <nav class="container mx-auto flex items-center justify-between px-4 py-4">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <img
+          src="/assets/logos/atlantec-logo.png"
+          alt="ATLANTEC Logo"
+          class="h-12 w-12 object-contain"
+        />
+        <span class="bg-gradient-to-r from-blue-600 via-cyan-500 to-orange-500 bg-clip-text text-xl font-bold text-transparent">Atlantec</span>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="/" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Inicio</a>
+        <a href="/#soluciones" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Soluciones</a>
+        <a href="/#servicios" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Servicios</a>
+        <a href="/blog" class="text-blue-600 font-medium">Blog</a>
+        <a href="/#contacto" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Article Hero -->
+  <section class="pt-24 pb-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+    <div class="container mx-auto px-4">
+      <!-- Breadcrumb -->
+      <nav class="mb-8">
+        <ol class="flex items-center space-x-2 text-sm text-gray-500">
+          <li><a href="/" class="hover:text-blue-600">Inicio</a></li>
+          <li><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+          <li><a href="/blog" class="hover:text-blue-600">Blog</a></li>
+          <li><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+          <li class="text-gray-800">SEO Local</li>
+        </ol>
+      </nav>
+
+      <div class="max-w-4xl mx-auto">
+        <!-- Category Badge -->
+        <div class="mb-4">
+          <span class="px-3 py-1 bg-emerald-100 text-emerald-600 text-sm font-medium rounded-full">
+            {article.category}
+          </span>
+        </div>
+
+        <!-- Article Title -->
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+          {article.title}
+        </h1>
+
+        <!-- Article Meta -->
+        <div class="flex flex-wrap items-center gap-6 text-gray-600 mb-8">
+          <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+            </svg>
+            <span>{article.author}</span>
+          </div>
+          
+          <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+            </svg>
+            <span>{new Date(article.date).toLocaleDateString('es-ES', { 
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+            })}</span>
+          </div>
+
+          <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+            </svg>
+            <span>{article.readTime} de lectura</span>
+          </div>
+        </div>
+
+        <!-- Featured Image -->
+        <div class="aspect-video bg-gradient-to-br from-emerald-100 to-teal-100 rounded-xl mb-8 flex items-center justify-center">
+          <svg class="w-24 h-24 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <article class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="prose prose-lg prose-blue max-w-none">
+          
+          <h2>¿Por Qué es Crucial el SEO Local?</h2>
+          
+          <p>En la era digital actual, el 76% de las personas que realizan búsquedas locales en sus dispositivos móviles visitan una tienda física dentro de las 24 horas. Si tu negocio no está optimizado para búsquedas locales, estás perdiendo una oportunidad enorme de atraer clientes potenciales.</p>
+
+          <p>El <strong>SEO local</strong> es fundamental para cualquier empresa que tenga una ubicación física o que preste servicios en áreas geográficas específicas. En <strong>ATLANTEC</strong>, hemos ayudado a cientos de negocios locales a mejorar su visibilidad online y aumentar sus ventas.</p>
+
+          <h2>1. Optimiza tu Perfil de Google Business Profile</h2>
+          
+          <p>Tu perfil de Google Business Profile (anteriormente Google My Business) es la piedra angular de tu estrategia de SEO local:</p>
+
+          <h3>Información Básica Completa</h3>
+          <ul>
+            <li><strong>Nombre del negocio:</strong> Usa el nombre oficial sin keywords añadidas</li>
+            <li><strong>Dirección exacta:</strong> Consistente en todas las plataformas</li>
+            <li><strong>Número de teléfono local:</strong> Preferiblemente con prefijo de tu ciudad</li>
+            <li><strong>Horarios de atención:</strong> Actualizados y precisos</li>
+            <li><strong>Categoría principal:</strong> Elige la más específica y relevante</li>
+          </ul>
+
+          <h3>Elementos Visuales</h3>
+          <ul>
+            <li>Foto de perfil profesional (logo o fachada)</li>
+            <li>Fotos del interior y exterior del negocio</li>
+            <li>Imágenes de productos o servicios</li>
+            <li>Fotos del equipo de trabajo</li>
+          </ul>
+
+          <blockquote>
+            <p>"Los negocios con perfiles completos de Google Business Profile reciben 7 veces más clics que aquellos con perfiles incompletos."</p>
+          </blockquote>
+
+          <h2>2. Gestión Estratégica de Reseñas</h2>
+
+          <p>Las reseñas son un factor crucial para el posicionamiento local y la confianza del cliente:</p>
+
+          <h3>Estrategias para Obtener Más Reseñas</h3>
+          <ul>
+            <li><strong>Solicita activamente:</strong> Pide reseñas después de una experiencia positiva</li>
+            <li><strong>Facilita el proceso:</strong> Envía enlaces directos para dejar reseñas</li>
+            <li><strong>Incentiva apropiadamente:</strong> Ofrece pequeños descuentos (sin comprar reseñas)</li>
+            <li><strong>Timing perfecto:</strong> Solicita reseñas en el momento de máxima satisfacción</li>
+          </ul>
+
+          <h3>Responde a Todas las Reseñas</h3>
+          <ul>
+            <li><strong>Reseñas positivas:</strong> Agradece y personaliza la respuesta</li>
+            <li><strong>Reseñas negativas:</strong> Responde profesionalmente y ofrece soluciones</li>
+            <li><strong>Tiempo de respuesta:</strong> Idealmente dentro de 24 horas</li>
+            <li><strong>Tono consistente:</strong> Mantén la voz de tu marca</li>
+          </ul>
+
+          <h2>3. Optimización de Contenido Local</h2>
+
+          <h3>Keywords Locales Estratégicas</h3>
+          <p>Incorpora términos geográficos relevantes en tu contenido:</p>
+          <ul>
+            <li>"[Servicio] en [Ciudad]"</li>
+            <li>"Mejor [Producto] [Barrio]"</li>
+            <li>"[Negocio] cerca de [Punto de referencia]"</li>
+            <li>Nombres de calles y zonas importantes</li>
+          </ul>
+
+          <h3>Páginas de Ubicación Específicas</h3>
+          <p>Si tienes múltiples ubicaciones, crea páginas individuales para cada una:</p>
+          <ul>
+            <li>Dirección y datos de contacto únicos</li>
+            <li>Horarios específicos de cada sucursal</li>
+            <li>Fotos del local específico</li>
+            <li>Testimonios de clientes locales</li>
+            <li>Información sobre el área local</li>
+          </ul>
+
+          <h2>4. Construcción de Citations Locales</h2>
+
+          <p>Las citations son menciones de tu negocio en directorios online, incluso sin enlaces:</p>
+
+          <h3>Directorios Importantes en España</h3>
+          <ul>
+            <li><strong>Páginas Amarillas:</strong> El directorio tradicional más importante</li>
+            <li><strong>Foursquare:</strong> Especialmente relevante para restauración</li>
+            <li><strong>Yelp:</strong> Creciente importancia en España</li>
+            <li><strong>TripAdvisor:</strong> Esencial para turismo y hostelería</li>
+            <li><strong>Directorios sectoriales:</strong> Específicos de tu industria</li>
+          </ul>
+
+          <h3>Consistencia NAP</h3>
+          <p>Mantén estos datos idénticos en todas las plataformas:</p>
+          <ul>
+            <li><strong>N</strong>ombre del negocio</li>
+            <li><strong>A</strong>ddress (dirección)</li>
+            <li><strong>P</strong>hone (teléfono)</li>
+          </ul>
+
+          <h2>5. SEO Técnico para Búsquedas Locales</h2>
+
+          <h3>Schema Markup Local</h3>
+          <p>Implementa datos estructurados para ayudar a Google a entender tu negocio:</p>
+          <ul>
+            <li>LocalBusiness Schema</li>
+            <li>Información de contacto estructurada</li>
+            <li>Horarios de apertura</li>
+            <li>Geo-coordenadas</li>
+            <li>Métodos de pago aceptados</li>
+          </ul>
+
+          <h3>Optimización Móvil</h3>
+          <p>Las búsquedas locales son mayoritariamente móviles:</p>
+          <ul>
+            <li>Diseño responsive impecable</li>
+            <li>Velocidad de carga optimizada</li>
+            <li>Botones de llamada clickeables</li>
+            <li>Formularios de contacto simplificados</li>
+          </ul>
+
+          <h2>6. Estrategias de Link Building Local</h2>
+
+          <h3>Enlaces de Autoridades Locales</h3>
+          <ul>
+            <li><strong>Cámara de Comercio:</strong> Únete y consigue un enlace</li>
+            <li><strong>Periódicos locales:</strong> Aparece en noticias o patrocina eventos</li>
+            <li><strong>Blogs locales:</strong> Colabora con influencers de tu zona</li>
+            <li><strong>Eventos comunitarios:</strong> Participa y conseguirás menciones</li>
+          </ul>
+
+          <h3>Partnerships Estratégicos</h3>
+          <ul>
+            <li>Colabora con negocios complementarios</li>
+            <li>Intercambia enlaces con proveedores locales</li>
+            <li>Participa en asociaciones empresariales</li>
+            <li>Sponsoriza equipos deportivos locales</li>
+          </ul>
+
+          <h2>7. Medición y Análisis de Resultados</h2>
+
+          <h3>Métricas Clave a Monitorizar</h3>
+          <ul>
+            <li><strong>Posicionamiento local:</strong> Rankings en búsquedas geo-específicas</li>
+            <li><strong>Visibilidad en Google Maps:</strong> Apariciones en el pack local</li>
+            <li><strong>Tráfico orgánico local:</strong> Visitantes de tu área geográfica</li>
+            <li><strong>Conversiones locales:</strong> Llamadas, visitas, compras</li>
+          </ul>
+
+          <h3>Herramientas Recomendadas</h3>
+          <ul>
+            <li><strong>Google Analytics:</strong> Segmenta tráfico por ubicación</li>
+            <li><strong>Google Search Console:</strong> Consultas locales y rendimiento</li>
+            <li><strong>Google Business Profile Insights:</strong> Estadísticas específicas del perfil</li>
+            <li><strong>BrightLocal:</strong> Herramienta especializada en SEO local</li>
+          </ul>
+
+          <h2>Plan de Acción: Primeros 30 Días</h2>
+
+          <p>Para implementar una estrategia de SEO local efectiva, sigue este plan:</p>
+
+          <ol>
+            <li><strong>Semana 1:</strong> Optimiza completamente tu Google Business Profile</li>
+            <li><strong>Semana 2:</strong> Audita y corrige la consistencia NAP en directorios</li>
+            <li><strong>Semana 3:</strong> Implementa keywords locales en tu web</li>
+            <li><strong>Semana 4:</strong> Lanza campaña para generar reseñas</li>
+          </ol>
+
+          <h2>Conclusión</h2>
+
+          <p>El SEO local no es opcional en 2025: es esencial. Los negocios que implementen estas estrategias verán un aumento significativo en su visibilidad local, tráfico web y, lo más importante, en sus ventas.</p>
+
+          <p>En <strong>ATLANTEC</strong>, especializamos en ayudar a negocios locales a dominar sus mercados geográficos. Nuestro enfoque integral combina optimización técnica, gestión de reputación online y estrategias de contenido local para generar resultados medibles.</p>
+
+        </div>
+
+        <!-- Tags -->
+        <div class="mt-12 pt-8 border-t border-gray-200">
+          <h3 class="text-lg font-semibold text-gray-800 mb-4">Etiquetas</h3>
+          <div class="flex flex-wrap gap-3">
+            {article.tags.map(tag => (
+              <span class="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full hover:bg-emerald-100 hover:text-emerald-600 transition-colors duration-200 cursor-pointer">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-8 text-center">
+          <h3 class="text-2xl font-bold text-gray-800 mb-4">
+            ¿Listo para Dominar tu Mercado Local?
+          </h3>
+          <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+            En ATLANTEC te ayudamos a implementar una estrategia de SEO local que atraiga más clientes de tu zona y aumente tus ventas.
+          </p>
+          <a 
+            href="/#contacto" 
+            class="inline-flex items-center px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-lg transition-colors duration-200"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+            </svg>
+            Solicitar Análisis SEO Gratuito
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Related Articles -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Artículos Relacionados</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Related Article 1 -->
+          <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div class="aspect-video bg-gradient-to-br from-blue-100 to-cyan-100 flex items-center justify-center">
+              <svg class="w-12 h-12 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+              </svg>
+            </div>
+            <div class="p-6">
+              <span class="text-xs text-blue-600 font-medium">Tecnología</span>
+              <h3 class="text-lg font-bold text-gray-800 mt-2 mb-3">Las Tendencias Tecnológicas que Marcarán 2025</h3>
+              <p class="text-gray-600 text-sm mb-4">Descubre las principales innovaciones tecnológicas que transformarán los negocios...</p>
+              <a href="/blog/tendencias-tecnologicas-2025" class="text-blue-600 hover:text-blue-700 font-medium text-sm">Leer más →</a>
+            </div>
+          </article>
+
+          <!-- Related Article 2 -->
+          <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div class="aspect-video bg-gradient-to-br from-orange-100 to-red-100 flex items-center justify-center">
+              <svg class="w-12 h-12 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V8zm0 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2z"></path>
+              </svg>
+            </div>
+            <div class="p-6">
+              <span class="text-xs text-orange-600 font-medium">E-commerce</span>
+              <h3 class="text-lg font-bold text-gray-800 mt-2 mb-3">E-commerce: Claves para Vender Online con Éxito</h3>
+              <p class="text-gray-600 text-sm mb-4">Estrategias probadas para crear una tienda online exitosa...</p>
+              <a href="/blog/ecommerce-vender-online" class="text-blue-600 hover:text-blue-700 font-medium text-sm">Leer más →</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Back to Blog -->
+        <div class="text-center mt-12">
+          <a 
+            href="/blog" 
+            class="inline-flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg transition-colors duration-200"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Volver al Blog
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .prose {
+      color: #374151;
+    }
+    .prose h2 {
+      color: #1f2937;
+      font-size: 1.875rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .prose h3 {
+      color: #1f2937;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .prose p {
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+    .prose ul, .prose ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    .prose li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+    .prose blockquote {
+      border-left: 4px solid #10b981;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: #4b5563;
+      background: #f0fdf4;
+      padding: 1rem;
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+    .prose strong {
+      color: #1f2937;
+      font-weight: 600;
+    }
+  </style>
+</Layout>

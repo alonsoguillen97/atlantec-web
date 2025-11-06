@@ -1,0 +1,525 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const article = {
+  title: "Ciberseguridad para Pymes: Protege tu Negocio Digital",
+  author: "Miguel Torres",
+  date: "2025-01-02",
+  readTime: "5 min",
+  category: "Seguridad",
+  tags: ["Ciberseguridad", "Protección de Datos", "Pymes"],
+  excerpt: "Guía completa de ciberseguridad para pequeñas y medianas empresas: amenazas actuales, medidas preventivas y protocolos de respuesta."
+};
+---
+
+<Layout
+  title={`${article.title} - Blog ATLANTEC`}
+  description={article.excerpt}
+>
+  <!-- Header Navigation -->
+  <header class="fixed top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-200">
+    <nav class="container mx-auto flex items-center justify-between px-4 py-4">
+      <div class="flex items-center space-x-3">
+        <img
+          src="/assets/logos/atlantec-logo.png"
+          alt="ATLANTEC Logo"
+          class="h-12 w-12 object-contain"
+        />
+        <span class="bg-gradient-to-r from-blue-600 via-cyan-500 to-orange-500 bg-clip-text text-xl font-bold text-transparent">Atlantec</span>
+      </div>
+
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="/" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Inicio</a>
+        <a href="/#soluciones" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Soluciones</a>
+        <a href="/#servicios" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Servicios</a>
+        <a href="/blog" class="text-blue-600 font-medium">Blog</a>
+        <a href="/#contacto" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Article Hero -->
+  <section class="pt-24 pb-12 bg-gradient-to-br from-red-50 via-white to-pink-50">
+    <div class="container mx-auto px-4">
+      <nav class="mb-8">
+        <ol class="flex items-center space-x-2 text-sm text-gray-500">
+          <li><a href="/" class="hover:text-blue-600">Inicio</a></li>
+          <li><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+          <li><a href="/blog" class="hover:text-blue-600">Blog</a></li>
+          <li><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+          <li class="text-gray-800">Ciberseguridad Pymes</li>
+        </ol>
+      </nav>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="mb-4">
+          <span class="px-3 py-1 bg-red-100 text-red-600 text-sm font-medium rounded-full">
+            {article.category}
+          </span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+          {article.title}
+        </h1>
+
+        <div class="flex flex-wrap items-center gap-6 text-gray-600 mb-8">
+          <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+            </svg>
+            <span>{article.author}</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+            </svg>
+            <span>{new Date(article.date).toLocaleDateString('es-ES', { 
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+            })}</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+            </svg>
+            <span>{article.readTime} de lectura</span>
+          </div>
+        </div>
+
+        <div class="aspect-video bg-gradient-to-br from-red-100 to-pink-100 rounded-xl mb-8 flex items-center justify-center">
+          <svg class="w-24 h-24 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <article class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="prose prose-lg prose-blue max-w-none">
+          
+          <h2>La Realidad de las Ciberamenazas en España</h2>
+          
+          <p>El 73% de las pymes españolas ha sufrido algún tipo de ciberataque en los últimos dos años. Ransomware, phishing, robos de datos... Las amenazas digitales han evolucionado y se han sofisticado, convirtiendo la ciberseguridad en una necesidad crítica, no en un lujo opcional.</p>
+
+          <p>En <strong>ATLANTEC</strong>, hemos respondido a cientos de incidentes de seguridad y hemos visto cómo un ataque puede paralizar completamente un negocio en cuestión de horas. La buena noticia es que la mayoría de estos ataques son prevenibles con las medidas adecuadas.</p>
+
+          <blockquote>
+            <p>"La ciberseguridad no es un problema tecnológico, es un problema de negocio que requiere soluciones tecnológicas."</p>
+          </blockquote>
+
+          <h2>Principales Amenazas para Pymes</h2>
+
+          <h3>1. Ransomware - El Secuestro Digital</h3>
+          <p><strong>¿Qué es?</strong> Software malicioso que cifra todos los archivos de tu empresa y exige un rescate para liberarlos.</p>
+          
+          <p><strong>Impacto real:</strong></p>
+          <ul>
+            <li>Paralización completa de la actividad</li>
+            <li>Pérdida de datos críticos</li>
+            <li>Coste medio del rescate: 15.000€-50.000€</li>
+            <li>Tiempo de recuperación: 3-6 semanas</li>
+          </ul>
+
+          <p><strong>Vectores de ataque más comunes:</strong></p>
+          <ul>
+            <li>Emails con archivos adjuntos maliciosos</li>
+            <li>Descargas desde sitios web comprometidos</li>
+            <li>Dispositivos USB infectados</li>
+            <li>Vulnerabilidades en software desactualizado</li>
+          </ul>
+
+          <h3>2. Phishing - El Engaño Perfecto</h3>
+          <p><strong>¿Qué es?</strong> Emails fraudulentos que imitan empresas conocidas para robar credenciales o información sensible.</p>
+
+          <p><strong>Evolución del phishing:</strong></p>
+          <ul>
+            <li><strong>Spear Phishing:</strong> Ataques dirigidos y personalizados</li>
+            <li><strong>Whaling:</strong> Dirigidos específicamente a directivos</li>
+            <li><strong>Smishing:</strong> Phishing a través de SMS</li>
+            <li><strong>Vishing:</strong> Phishing telefónico</li>
+          </ul>
+
+          <h3>3. Ataques de Ingeniería Social</h3>
+          <p>Manipulación psicológica para obtener información confidencial:</p>
+          <ul>
+            <li><strong>Pretexto:</strong> Crear escenarios falsos para obtener información</li>
+            <li><strong>Baiting:</strong> Ofrecer algo atractivo a cambio de datos</li>
+            <li><strong>Quid pro quo:</strong> Intercambio de favores por información</li>
+            <li><strong>Tailgating:</strong> Acceso físico no autorizado siguiendo a empleados</li>
+          </ul>
+
+          <h2>Evaluación de Riesgos: ¿Cómo está tu Empresa?</h2>
+
+          <h3>Checklist de Vulnerabilidades Comunes</h3>
+
+          <h4>Gestión de Contraseñas</h4>
+          <ul>
+            <li>❌ ¿Usáis contraseñas simples o repetidas?</li>
+            <li>❌ ¿Compartís contraseñas por email o WhatsApp?</li>
+            <li>❌ ¿No tenéis autenticación de dos factores?</li>
+            <li>❌ ¿Las contraseñas no se cambian periódicamente?</li>
+          </ul>
+
+          <h4>Software y Sistemas</h4>
+          <ul>
+            <li>❌ ¿Tenéis software desactualizado?</li>
+            <li>❌ ¿No realizáis copias de seguridad regulares?</li>
+            <li>❌ ¿Usáis software pirata o sin licencia?</li>
+            <li>❌ ¿No tenéis antivirus empresarial?</li>
+          </ul>
+
+          <h4>Red y Conectividad</h4>
+          <ul>
+            <li>❌ ¿Vuestra WiFi no tiene contraseña o es muy simple?</li>
+            <li>❌ ¿No tenéis firewall configurado?</li>
+            <li>❌ ¿Permitís acceso remoto sin VPN?</li>
+            <li>❌ ¿No controláis qué dispositivos se conectan?</li>
+          </ul>
+
+          <h2>Plan de Ciberseguridad para Pymes</h2>
+
+          <h3>Nivel Básico - Fundamentos Esenciales</h3>
+
+          <h4>1. Gestión Segura de Contraseñas</h4>
+          <ul>
+            <li><strong>Gestor de contraseñas:</strong> 1Password, Bitwarden o LastPass</li>
+            <li><strong>Contraseñas únicas:</strong> Diferente para cada servicio</li>
+            <li><strong>Complejidad mínima:</strong> 12 caracteres, mayúsculas, números y símbolos</li>
+            <li><strong>Autenticación de dos factores (2FA):</strong> En todos los servicios críticos</li>
+          </ul>
+
+          <h4>2. Actualizaciones y Parches</h4>
+          <ul>
+            <li><strong>Sistema operativo:</strong> Actualizaciones automáticas activadas</li>
+            <li><strong>Software:</strong> Versiones más recientes de todos los programas</li>
+            <li><strong>Navegadores:</strong> Última versión con configuración de seguridad</li>
+            <li><strong>Plugins:</strong> Solo los necesarios y siempre actualizados</li>
+          </ul>
+
+          <h4>3. Protección Antimalware</h4>
+          <ul>
+            <li><strong>Antivirus empresarial:</strong> Kaspersky, BitDefender o ESET</li>
+            <li><strong>Protección en tiempo real:</strong> Análisis continuo de archivos</li>
+            <li><strong>Análisis programados:</strong> Escaneos completos semanales</li>
+            <li><strong>Protección web:</strong> Bloqueo de sitios maliciosos</li>
+          </ul>
+
+          <h3>Nivel Intermedio - Seguridad Reforzada</h3>
+
+          <h4>4. Copias de Seguridad (Backup)</h4>
+          <ul>
+            <li><strong>Regla 3-2-1:</strong> 3 copias, 2 soportes diferentes, 1 offsite</li>
+            <li><strong>Automatización:</strong> Backups diarios automáticos</li>
+            <li><strong>Cifrado:</strong> Todas las copias cifradas</li>
+            <li><strong>Pruebas de restauración:</strong> Verificación mensual</li>
+          </ul>
+
+          <h4>5. Seguridad de Red</h4>
+          <ul>
+            <li><strong>Firewall empresarial:</strong> Filtrado avanzado de tráfico</li>
+            <li><strong>Red WiFi segura:</strong> WPA3, contraseña compleja</li>
+            <li><strong>Red de invitados:</strong> Separada de la red empresarial</li>
+            <li><strong>VPN corporativa:</strong> Para accesos remotos seguros</li>
+          </ul>
+
+          <h4>6. Formación del Personal</h4>
+          <ul>
+            <li><strong>Concienciación básica:</strong> Identificación de amenazas</li>
+            <li><strong>Simulacros de phishing:</strong> Pruebas periódicas</li>
+            <li><strong>Protocolos de respuesta:</strong> Qué hacer ante un incidente</li>
+            <li><strong>Actualizaciones regulares:</strong> Nuevas amenazas y técnicas</li>
+          </ul>
+
+          <h3>Nivel Avanzado - Seguridad Empresarial</h3>
+
+          <h4>7. Gestión de Identidades y Accesos (IAM)</h4>
+          <ul>
+            <li><strong>Principio del menor privilegio:</strong> Acceso mínimo necesario</li>
+            <li><strong>Single Sign-On (SSO):</strong> Autenticación centralizada</li>
+            <li><strong>Revisión de permisos:</strong> Auditorías trimestrales</li>
+            <li><strong>Desactivación automática:</strong> Cuentas de empleados que se van</li>
+          </ul>
+
+          <h4>8. Monitorización y Detección</h4>
+          <ul>
+            <li><strong>SIEM básico:</strong> Registro y análisis de eventos</li>
+            <li><strong>Detección de anomalías:</strong> Comportamientos inusuales</li>
+            <li><strong>Alertas automáticas:</strong> Notificaciones de seguridad</li>
+            <li><strong>Análisis forense:</strong> Investigación de incidentes</li>
+          </ul>
+
+          <h2>Protocolos de Respuesta ante Incidentes</h2>
+
+          <h3>Fase 1: Detección Inmediata (0-1 hora)</h3>
+          <ul>
+            <li><strong>Identificar el incidente:</strong> ¿Qué tipo de ataque es?</li>
+            <li><strong>Aislar sistemas afectados:</strong> Desconectar de la red</li>
+            <li><strong>Preservar evidencias:</strong> No tocar archivos comprometidos</li>
+            <li><strong>Contactar al equipo de respuesta:</strong> IT interno o externo</li>
+          </ul>
+
+          <h3>Fase 2: Contención (1-4 horas)</h3>
+          <ul>
+            <li><strong>Evaluar el alcance:</strong> ¿Qué sistemas están comprometidos?</li>
+            <li><strong>Cambiar contraseñas:</strong> Especialmente cuentas administrativas</li>
+            <li><strong>Aplicar parches urgentes:</strong> Cerrar vectores de ataque</li>
+            <li><strong>Activar sistemas de respaldo:</strong> Mantener operaciones críticas</li>
+          </ul>
+
+          <h3>Fase 3: Erradicación y Recuperación (4-24 horas)</h3>
+          <ul>
+            <li><strong>Eliminar malware:</strong> Limpieza completa de sistemas</li>
+            <li><strong>Restaurar desde backups:</strong> Datos limpios verificados</li>
+            <li><strong>Reforzar seguridad:</strong> Implementar medidas adicionales</li>
+            <li><strong>Monitorizar amenazas:</strong> Vigilancia intensiva</li>
+          </ul>
+
+          <h3>Fase 4: Análisis Post-Incidente (1-7 días)</h3>
+          <ul>
+            <li><strong>Documentar el incidente:</strong> Cronología completa</li>
+            <li><strong>Analizar causas raíz:</strong> ¿Cómo ocurrió?</li>
+            <li><strong>Mejorar defensas:</strong> Prevenir futuros ataques similares</li>
+            <li><strong>Formar al personal:</strong> Lecciones aprendidas</li>
+          </ul>
+
+          <h2>Casos Reales de Éxito ATLANTEC</h2>
+
+          <h3>Caso 1: Despacho de Abogados - Ataque Ransomware Evitado</h3>
+          <p><strong>Situación:</strong> 25 empleados, manejo de datos sensibles de clientes.</p>
+          <p><strong>Problema inicial:</strong> Email sospechoso con archivo adjunto.</p>
+          <p><strong>Intervención ATLANTEC:</strong></p>
+          <ul>
+            <li>Detección automática del malware en 3 minutos</li>
+            <li>Aislamiento inmediato del equipo afectado</li>
+            <li>Análisis forense del archivo malicioso</li>
+            <li>Refuerzo de filtros de email</li>
+          </ul>
+          <p><strong>Resultado:</strong> Ataque neutralizado sin pérdida de datos ni interrupción del servicio.</p>
+
+          <h3>Caso 2: E-commerce de Moda - Protección de Datos de Clientes</h3>
+          <p><strong>Situación:</strong> Tienda online con 50.000 clientes registrados.</p>
+          <p><strong>Desafío:</strong> Cumplimiento RGPD y protección de tarjetas de crédito.</p>
+          <p><strong>Solución implementada:</strong></p>
+          <ul>
+            <li>Certificado SSL/TLS avanzado</li>
+            <li>Cifrado de base de datos</li>
+            <li>Tokenización de datos de pago</li>
+            <li>Auditorías de seguridad mensuales</li>
+          </ul>
+          <p><strong>Resultado:</strong> Certificación PCI DSS obtenida, 100% cumplimiento RGPD.</p>
+
+          <h2>Herramientas Recomendadas por ATLANTEC</h2>
+
+          <h3>Gestión de Contraseñas</h3>
+          <ul>
+            <li><strong>1Password Business:</strong> €8/usuario/mes - Ideal para equipos</li>
+            <li><strong>Bitwarden Business:</strong> €3/usuario/mes - Opción económica</li>
+            <li><strong>Dashlane Business:</strong> €5/usuario/mes - Interfaz intuitiva</li>
+          </ul>
+
+          <h3>Seguridad Endpoint</h3>
+          <ul>
+            <li><strong>Kaspersky Endpoint Security:</strong> Protección avanzada contra malware</li>
+            <li><strong>CrowdStrike Falcon Go:</strong> Detección basada en IA</li>
+            <li><strong>Microsoft Defender Business:</strong> Integración con Office 365</li>
+          </ul>
+
+          <h3>Backup y Recuperación</h3>
+          <ul>
+            <li><strong>Veeam Backup & Replication:</strong> Líder en backup empresarial</li>
+            <li><strong>Acronis Cyber Backup:</strong> Backup con ciberseguridad integrada</li>
+            <li><strong>Carbonite Safe:</strong> Backup en la nube automático</li>
+          </ul>
+
+          <h2>Inversión en Ciberseguridad: ROI y Costes</h2>
+
+          <h3>Coste de un Ciberataque vs. Inversión en Prevención</h3>
+
+          <h4>Coste Promedio de un Ciberataque en Pymes:</h4>
+          <ul>
+            <li><strong>Parada de negocio:</strong> €5.000-€50.000</li>
+            <li><strong>Pérdida de datos:</strong> €10.000-€100.000</li>
+            <li><strong>Restauración de sistemas:</strong> €2.000-€20.000</li>
+            <li><strong>Multas RGPD:</strong> €300-€20.000.000</li>
+            <li><strong>Daño reputacional:</strong> Pérdida del 30% de clientes</li>
+          </ul>
+
+          <h4>Inversión Anual en Ciberseguridad Básica:</h4>
+          <ul>
+            <li><strong>Empresa de 5-10 empleados:</strong> €2.000-€4.000/año</li>
+            <li><strong>Empresa de 11-25 empleados:</strong> €4.000-€8.000/año</li>
+            <li><strong>Empresa de 26-50 empleados:</strong> €8.000-€15.000/año</li>
+          </ul>
+
+          <h2>Tendencias de Ciberseguridad 2025</h2>
+
+          <h3>Nuevas Amenazas</h3>
+          <ul>
+            <li><strong>IA maliciosa:</strong> Deepfakes para phishing avanzado</li>
+            <li><strong>Ransomware as a Service:</strong> Democratización del ransomware</li>
+            <li><strong>Ataques a la cadena de suministro:</strong> Comprometer proveedores</li>
+            <li><strong>Criptojacking:</strong> Minería de criptomonedas sin consentimiento</li>
+          </ul>
+
+          <h3>Nuevas Defensas</h3>
+          <ul>
+            <li><strong>Zero Trust Architecture:</strong> "Nunca confíes, siempre verifica"</li>
+            <li><strong>SASE (Secure Access Service Edge):</strong> Seguridad en la nube</li>
+            <li><strong>XDR (Extended Detection and Response):</strong> Detección unificada</li>
+            <li><strong>Security Mesh:</strong> Arquitectura de seguridad distribuida</li>
+          </ul>
+
+          <h2>Conclusión</h2>
+
+          <p>La ciberseguridad no es un destino, es un viaje. En un panorama de amenazas en constante evolución, las pymes necesitan adoptar un enfoque proactivo y multicapa para proteger sus activos digitales más valiosos.</p>
+
+          <p>En <strong>ATLANTEC</strong>, entendemos que cada empresa tiene necesidades únicas de seguridad. Nuestro enfoque personalizado asegura que recibas exactamente la protección que necesitas, sin pagar por funcionalidades innecesarias.</p>
+
+          <p>Recuerda: el coste de la prevención siempre será menor que el coste de la recuperación después de un ataque.</p>
+
+        </div>
+
+        <!-- Tags -->
+        <div class="mt-12 pt-8 border-t border-gray-200">
+          <h3 class="text-lg font-semibold text-gray-800 mb-4">Etiquetas</h3>
+          <div class="flex flex-wrap gap-3">
+            {article.tags.map(tag => (
+              <span class="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full hover:bg-red-100 hover:text-red-600 transition-colors duration-200 cursor-pointer">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-8 text-center">
+          <h3 class="text-2xl font-bold text-gray-800 mb-4">
+            ¿Está tu Empresa Realmente Protegida?
+          </h3>
+          <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+            En ATLANTEC realizamos auditorías de ciberseguridad gratuitas para evaluar tus vulnerabilidades y diseñar un plan de protección personalizado.
+          </p>
+          <a 
+            href="/#contacto" 
+            class="inline-flex items-center px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition-colors duration-200"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+            Auditoría Gratuita
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Related Articles -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Artículos Relacionados</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div class="aspect-video bg-gradient-to-br from-slate-100 to-gray-200 flex items-center justify-center">
+              <svg class="w-12 h-12 text-slate-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+              </svg>
+            </div>
+            <div class="p-6">
+              <span class="text-xs text-slate-600 font-medium">Automatización</span>
+              <h3 class="text-lg font-bold text-gray-800 mt-2 mb-3">Automatización de Procesos: Optimiza tu Negocio</h3>
+              <p class="text-gray-600 text-sm mb-4">Cómo implementar la automatización en tu empresa para reducir costes...</p>
+              <a href="/blog/automatizacion-procesos-negocio" class="text-blue-600 hover:text-blue-700 font-medium text-sm">Leer más →</a>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div class="aspect-video bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center">
+              <svg class="w-12 h-12 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+              </svg>
+            </div>
+            <div class="p-6">
+              <span class="text-xs text-blue-600 font-medium">Tecnología</span>
+              <h3 class="text-lg font-bold text-gray-800 mt-2 mb-3">Tendencias Tecnológicas para 2025</h3>
+              <p class="text-gray-600 text-sm mb-4">Las innovaciones que transformarán los negocios este año...</p>
+              <a href="/blog/tendencias-tecnologicas-2025" class="text-blue-600 hover:text-blue-700 font-medium text-sm">Leer más →</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="text-center mt-12">
+          <a 
+            href="/blog" 
+            class="inline-flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg transition-colors duration-200"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Volver al Blog
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .prose {
+      color: #374151;
+    }
+    .prose h2 {
+      color: #1f2937;
+      font-size: 1.875rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .prose h3 {
+      color: #1f2937;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .prose h4 {
+      color: #1f2937;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .prose p {
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+    .prose ul, .prose ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    .prose li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+    .prose blockquote {
+      border-left: 4px solid #dc2626;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: #4b5563;
+      background: #fef2f2;
+      padding: 1rem;
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+    .prose strong {
+      color: #1f2937;
+      font-weight: 600;
+    }
+  </style>
+</Layout>
