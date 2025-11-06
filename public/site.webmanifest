@@ -1,0 +1,34 @@
+{
+  "name": "ATLANTEC - Servicios Informáticos Costa de Cádiz",
+  "short_name": "ATLANTEC",
+  "description": "Servicios informáticos especializados en la costa de Cádiz. Consultoría, desarrollo web, aplicaciones móviles, IA, sistemas TPV y marketing digital.",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e40af",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "es-ES"
+}
