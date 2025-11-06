@@ -1,0 +1,338 @@
+﻿/* Importaciones de fuentes y Tailwind CSS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+/* Variables CSS personalizadas para ATLANTEC */
+:root {
+  /* Paleta de colores corporativos ATLANTEC */
+  --atlantec-blue: #035397; /* Azul AtlÃ¡ntico - Color primario */
+  --atlantec-blue-dark: #024074; /* Azul mÃ¡s oscuro */
+  --atlantec-turquoise: #36d1dc; /* Turquesa Marino - Secundario */
+  --atlantec-orange: #ff751f; /* Amarillo Sol - Acento */
+  --atlantec-silver: #ededed; /* Gris Plata - Neutro */
+  --atlantec-dark: #2c3e50; /* Gris Oscuro - Textos */
+}
+
+/* Estilos base para tipografÃ­a */
+body {
+  font-family:
+    'Open Sans',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: white !important;
+  color: #1f2937 !important;
+}
+
+/* Colores base para toda la pÃ¡gina */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #374151;
+}
+
+p {
+  color: #4b5563;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:
+    'Montserrat',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}
+
+/* Transiciones globales suaves */
+* {
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Animaciones modernas */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Clases de utilidad para animaciones */
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+.animate-pulse-hover:hover {
+  animation: pulse 0.6s ease-in-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Efectos de glassmorphism modernos - ELIMINADOS para evitar conflictos */
+/* Ya no se usan estas clases en el header */
+
+/* Header dinámico - sin forzar estilos para permitir transiciones */
+
+/* FORZAR COLORES DEL HEADER - MÃXIMA PRIORIDAD */
+html body header nav div a {
+  color: #374151 !important;
+}
+
+html body header nav div div {
+  color: #1e40af !important; /* Logo ATLANTEC */
+}
+
+html body header nav div span {
+  color: #1e3a8a !important; /* S.L. */
+}
+
+html body header nav div button {
+  color: #374151 !important;
+}
+
+/* Modo oscuro con mÃ¡xima especificidad */
+html
+
+html
+
+html
+
+html
+
+/* Efectos hover para enlaces del header */
+.header-link:hover {
+  color: #1e40af !important;
+  transform: translateY(-1px);
+}
+
+/* Reglas de header removidas para permitir transición dinámica con JavaScript */
+
+/* Shadows modernas con colores ATLANTEC */
+.shadow-atlantec {
+  box-shadow:
+    0 10px 25px -5px rgba(3, 83, 151, 0.1),
+    0 4px 6px -2px rgba(3, 83, 151, 0.05);
+}
+
+.shadow-atlantec-lg {
+  box-shadow:
+    0 20px 40px -10px rgba(3, 83, 151, 0.15),
+    0 8px 16px -4px rgba(3, 83, 151, 0.1);
+}
+
+/* Hover effects modernos */
+.hover-lift {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -10px rgba(3, 83, 151, 0.2);
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* Clases de color ATLANTEC para fÃ¡cil uso */
+.text-atlantec-blue {
+  color: #035397 !important;
+}
+
+.text-atlantec-blue-dark {
+  color: #024074 !important;
+}
+
+.text-atlantec-dark {
+  color: #2c3e50 !important;
+}
+
+.text-atlantec-turquoise {
+  color: #36d1dc !important;
+}
+
+.bg-atlantec-blue-light {
+  background-color: rgba(3, 83, 151, 0.1);
+}
+
+/* Forzar colores especÃ­ficos para el header */
+header .text-atlantec-blue {
+  color: #035397 !important;
+}
+
+header .text-atlantec-dark {
+  color: #2c3e50 !important;
+}
+
+header .text-atlantec-blue-dark {
+  color: #024074 !important;
+}
+
+/* Efecto de texto destacado con colores en lugar de animaciones */
+.text-highlight {
+  position: relative;
+  text-shadow: 0 0 20px rgba(3, 83, 151, 0.3);
+  transition: all 0.3s ease;
+}
+
+.text-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--atlantec-blue),
+    var(--atlantec-turquoise)
+  );
+  border-radius: 2px;
+  opacity: 0.7;
+}
+
+/* Gradientes modernos con colores ATLANTEC */
+.gradient-atlantec {
+  background: linear-gradient(
+    135deg,
+    var(--atlantec-blue) 0%,
+    var(--atlantec-turquoise) 100%
+  );
+}
+
+.gradient-atlantec-soft {
+  background: linear-gradient(
+    135deg,
+    rgba(3, 83, 151, 0.1) 0%,
+    rgba(54, 209, 220, 0.1) 100%
+  );
+}
+
+/* Estilos para navbar dinámico con scroll */
+#navbar {
+  transition:
+    background-color 0.6s cubic-bezier(0.25, 0.8, 0.25, 1),
+    backdrop-filter 0.6s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.6s cubic-bezier(0.25, 0.8, 0.25, 1),
+    border-bottom 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(0px);
+  will-change: background-color, backdrop-filter, box-shadow;
+}
+
+/* Soporte para -webkit-backdrop-filter en Safari */
+@supports (-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px)) {
+  #navbar {
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+  }
+}
+
+/* Mejoras para transiciones suaves */
+.navbar-smooth-transition {
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Animación suave para la transición del navbar */
+@keyframes navbarSlideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-navbar-slide {
+  animation: navbarSlideDown 0.6s ease-out forwards;
+}

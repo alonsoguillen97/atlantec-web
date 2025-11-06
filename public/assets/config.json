@@ -1,0 +1,53 @@
+{
+  "imageOptimization": {
+    "formats": ["webp", "avif", "jpg", "png"],
+    "quality": {
+      "webp": 85,
+      "avif": 80,
+      "jpg": 85,
+      "png": 90
+    },
+    "sizes": {
+      "heroes": {
+        "desktop": "1920x1080",
+        "tablet": "1200x675",
+        "mobile": "800x450"
+      },
+      "testimonials": {
+        "standard": "400x400",
+        "retina": "800x800"
+      },
+      "services": {
+        "card": "600x400",
+        "banner": "1200x600"
+      },
+      "gallery": {
+        "thumbnail": "300x200",
+        "medium": "800x600",
+        "large": "1400x1050"
+      }
+    }
+  },
+  "iconOptimization": {
+    "formats": ["svg", "png"],
+    "sizes": [16, 32, 48, 64, 128, 256],
+    "svgOptimization": true
+  },
+  "brandColors": {
+    "primary": "#1e40af",
+    "secondary": "#36D1DC",
+    "accent": "#ff751f",
+    "neutral": {
+      "50": "#f9fafb",
+      "100": "#f3f4f6",
+      "200": "#e5e7eb",
+      "300": "#d1d5db",
+      "400": "#9ca3af",
+      "500": "#6b7280",
+      "600": "#4b5563",
+      "700": "#374151",
+      "800": "#1f2937",
+      "900": "#111827"
+    }
+  }
+}

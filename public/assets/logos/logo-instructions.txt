@@ -1,0 +1,24 @@
+INSTRUCCIONES PARA EL LOGO DE ATLANTEC
+=======================================
+
+1. ARCHIVO NECESARIO:
+   - Guarda la imagen PNG del logo como: atlantec-logo.png
+   - Ubicación: /public/assets/logos/atlantec-logo.png
+
+2. CARACTERÍSTICAS DEL LOGO:
+   - Ola representando la costa de Cádiz (azul/cyan)
+   - Conectores representando la tecnología (azul oscuro)  
+   - Mantiene los colores corporativos de ATLANTEC
+   - Formato PNG para mejor calidad
+
+3. USO EN EL CÓDIGO:
+   <img 
+     src="/assets/logos/atlantec-logo.png" 
+     alt="ATLANTEC Logo" 
+     class="h-10 w-10 object-contain"
+   />
+
+4. COLORES CORPORATIVOS:
+   - Azul principal: #1e40af (blue-600)
+   - Cyan/Turquesa: #36D1DC (cyan-400)
+   - Naranja: #ff751f (orange-500)
