@@ -9,16 +9,74 @@
   <!-- Página principal -->
   <url>
     <loc>https://atlantec.es/</loc>
-    <lastmod>2025-11-06T14:00:00+01:00</lastmod>
+    <lastmod>2025-11-07T10:00:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <!-- Blog principal -->
+  <url>
+    <loc>https://atlantec.es/blog</loc>
+    <lastmod>2025-11-07T10:00:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <!-- Posts del blog -->
+  <url>
+    <loc>https://atlantec.es/blog/automatizacion-procesos-negocio</loc>
+    <lastmod>2025-11-07T10:00:00+01:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://atlantec.es/blog/ciberseguridad-pymes</loc>
+    <lastmod>2025-11-07T10:00:00+01:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://atlantec.es/blog/ecommerce-vender-online</loc>
+    <lastmod>2025-11-07T10:00:00+01:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://atlantec.es/blog/seo-local-negocio</loc>
+    <lastmod>2025-11-07T10:00:00+01:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://atlantec.es/blog/sistema-tpv-moderno</loc>
+    <lastmod>2025-11-07T10:00:00+01:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://atlantec.es/blog/tendencias-tecnologicas-2025</loc>
+    <lastmod>2025-11-07T10:00:00+01:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
     <mobile:mobile/>
   </url>
   
   <!-- Sección Servicios -->
   <url>
     <loc>https://atlantec.es/#servicios</loc>
-    <lastmod>2025-11-06T14:00:00+01:00</lastmod>
+    <lastmod>2025-11-07T10:00:00+01:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <mobile:mobile/>
@@ -27,7 +85,7 @@
   <!-- Sección Testimonios -->
   <url>
     <loc>https://atlantec.es/#testimonios</loc>
-    <lastmod>2025-11-06T14:00:00+01:00</lastmod>
+    <lastmod>2025-11-07T10:00:00+01:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <mobile:mobile/>
@@ -36,7 +94,7 @@
   <!-- Sección Precios -->
   <url>
     <loc>https://atlantec.es/#precios</loc>
-    <lastmod>2025-11-06T14:00:00+01:00</lastmod>
+    <lastmod>2025-11-07T10:00:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <mobile:mobile/>
@@ -45,7 +103,7 @@
   <!-- Sección Contacto -->
   <url>
     <loc>https://atlantec.es/#contacto</loc>
-    <lastmod>2025-11-06T14:00:00+01:00</lastmod>
+    <lastmod>2025-11-07T10:00:00+01:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <mobile:mobile/>
